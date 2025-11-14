@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/grids.css">
 
 </head>
+
 <body>
     <h1>An overview of restaurants in Vancouver</h1>
-    <div id="visualisation-container">
-        <p>hello</p>
+    <h3>This project explores cafés and restaurants in Downtown Vancouver. We look at how different cuisine types are
+        distributed, where food businesses are located, and how the scene has changed over time.</h3>
 
-    </div>
-    
+    <h2>Breaking it down by cuisine</h2>
     <div id="visualisations-container">
-        <circle r="10" cx="10" cy="10" fill="black" />
+        <svg viewBox="0 0 220 100">
+            <circle r="100" cx="100" cy="100" fill="black" />
+        </svg>
     </div>
 
+    <h2>Cafes vs Restaurants</h2>
+
+    <div class="grid two-column">
+        <div>
+
+            <div id="visualisations-container">
+
+                <div id="observablehq-cafevsjapanese-24ea40a5"></div>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+                <script type="module">
+                    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                    import define from "https://api.observablehq.com/d/9a6d5a860169013f@130.js?v=4&api_key=f2a71020944cb3f231cd5c5dd3b7f19104dfebca";
+                    new Runtime().module(define, name => {
+                        if (name === "cafevsjapanese") return new Inspector(document.querySelector("#observablehq-cafevsjapanese-24ea40a5"));
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div>
+            <p>This chart compares the total number of cafés and restaurants in Downtown Vancouver.
+                It provides a simple overview of which type of business is more common in the area.
+            </p>
+        </div>
+    </div>
+
+    <h2>Trends over time</h2>
+    <h2>Where cafés and restaurants are located</h2>
+    <h2>How Long do these establishments survive?</h2>
+
+    <p>Data source: City of Vancouver Open Data Portal
+        https://opendata.vancouver.ca/explore/dataset/business-licences-2013-to-2024/information/?disjunctive.status</p>
 
 
-    
+
 </body>
+
 </html>
