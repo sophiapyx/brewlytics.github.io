@@ -18,9 +18,16 @@
 
     <h2>Breaking it down by cuisine</h2>
     <div id="visualisations-container">
-        <svg viewBox="0 0 220 100">
-            <circle r="100" cx="100" cy="100" fill="black" />
-        </svg>
+        <div id="observablehq-cuisine-c252c0d2"></div>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+        <script type="module">
+            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+            import define from "https://api.observablehq.com/d/9a6d5a860169013f@159.js?v=4";
+            new Runtime().module(define, name => {
+                if (name === "cuisine") return new Inspector(document.querySelector("#observablehq-cuisine-c252c0d2"));
+            });
+        </script>
     </div>
 
     <h2>Cafes vs Restaurants</h2>
@@ -30,13 +37,14 @@
 
             <div id="visualisations-container">
 
-                <div id="observablehq-cafevsjapanese-24ea40a5"></div>
+                <div id="observablehq-cafevsjapanese-6aa0f8ae"></div>
+
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
                 <script type="module">
                     import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-                    import define from "https://api.observablehq.com/d/9a6d5a860169013f@130.js?v=4&api_key=f2a71020944cb3f231cd5c5dd3b7f19104dfebca";
+                    import define from "https://api.observablehq.com/d/9a6d5a860169013f@159.js?v=4";
                     new Runtime().module(define, name => {
-                        if (name === "cafevsjapanese") return new Inspector(document.querySelector("#observablehq-cafevsjapanese-24ea40a5"));
+                        if (name === "cafevsjapanese") return new Inspector(document.querySelector("#observablehq-cafevsjapanese-6aa0f8ae"));
                     });
                 </script>
             </div>
@@ -50,6 +58,30 @@
     </div>
 
     <h2>Trends over time</h2>
+<div id="observablehq-year-5dc96ca8"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/9a6d5a860169013f@193.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "year") return new Inspector(document.querySelector("#observablehq-year-5dc96ca8"));
+});
+</script>
+
+<div id="observablehq-closing-5dc96ca8"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/9a6d5a860169013f@193.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "closing") return new Inspector(document.querySelector("#observablehq-closing-5dc96ca8"));
+});
+</script>
+
+
+
     <h2>Where cafés and restaurants are located</h2>
     <h2>How Long do these establishments survive?</h2>
 
