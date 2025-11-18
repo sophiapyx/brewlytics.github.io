@@ -53,7 +53,16 @@
 
       <div class="section__visual section__visual--center">
         <div id="viz-cuisine" class="viz-placeholder">
-          <span>Breaking it down by cuisine — chart coming soon</span>
+            <div id="observablehq-cuisine-11c8749a"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/9a6d5a860169013f@209.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "cuisine") return new Inspector(document.querySelector("#observablehq-cuisine-11c8749a"));
+});
+</script>
         </div>
       </div>
 
@@ -105,8 +114,16 @@
       <div class="section__visual">
         <h2 class="section-heading">Trends Over Time</h2>
         <div id="viz-trends" class="viz-placeholder">
-          <span>Trends over time — line chart coming soon</span>
-        </div>
+<div id="observablehq-openings-caffb9dd"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/9a6d5a860169013f@209.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "openings") return new Inspector(document.querySelector("#observablehq-openings-caffb9dd"));
+});
+</script>        </div>
       </div>
     </section>
 
