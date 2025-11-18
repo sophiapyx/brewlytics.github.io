@@ -2,217 +2,193 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Brewlytics · Downtown Vancouver Dining Explorer</title>
+  <title>Brewlytics · Downtown Vancouver Dining Explorer</title>
 
-    <!-- Styles -->
-    <!-- You will style layout, colors, typography in these CSS files -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/grids.css" />
+  <!-- Styles -->
+  <!-- You will style layout, colors, typography in these CSS files -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/grids.css" />
 
-    <!-- Observable inspector styles (for the embedded chart) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css" />
+  <!-- Observable inspector styles (for the embedded chart) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css" />
 </head>
 
 <body>
-    <!-- ================= HEADER ================= -->
-    <header class="site-header">
-        <div class="container">
-            <div class="site-header__top">
-                <h1 class="site-title">An Overview of Restaurants & Cafés in Downtown Vancouver</h1>
-                <p class="site-subtitle">
-                    This project explores cafés and restaurants in Downtown Vancouver. We look at how different cuisine
-                    types are
-                    distributed, where food businesses are located, and how the scene has changed over time.
-                </p>
-            </div>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__top">
+        <h1 class="site-title">An Overview of Restaurants & Cafés in Downtown Vancouver</h1>
+        <p class="site-subtitle">
+          This project explores cafés and restaurants in Downtown Vancouver. We look at how different cuisine types are
+          distributed, where food businesses are located, and how the scene has changed over time.
+        </p>
+      </div>
 
-            <!-- Simple navigation – later we can add smooth scrolling + active state -->
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#cuisine">Cuisine</a></li>
-                    <li><a href="#categories">Cafés vs Restaurants</a></li>
-                    <li><a href="#map">Map</a></li>
-                    <li><a href="#lifespan">Lifespan</a></li>
-                    <li><a href="#data-source">Data</a></li>
-                </ul>
-            </nav>
+      <!-- Simple navigation – later we can add smooth scrolling + active state -->
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#cuisine">Cuisine</a></li>
+          <li><a href="#categories">Cafés vs Restaurants</a></li>
+          <li><a href="#map">Map</a></li>
+          <li><a href="#lifespan">Lifespan</a></li>
+          <li><a href="#data-source">Data</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+<main>
+  <div class="container">
+
+    <!-- ========== SECTION: Cuisine Breakdown (big centered) ========== -->
+    <section id="cuisine" class="section section--stack">
+      <h2 class="section-heading section-heading--center">
+        Breaking it Down by Cuisine
+      </h2>
+
+      <div class="section__visual section__visual--center">
+        <div id="viz-cuisine" class="viz-placeholder">
+          <span>Breaking it down by cuisine — chart coming soon</span>
         </div>
-    </header>
+      </div>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main>
-        <div class="container">
+      <div class="section__text section__text--narrow section__text--center">
+        <p>
+          This visualization will show the share of different cuisine types in Downtown Vancouver. It gives a quick
+          overview of which food styles are most common, and how diverse the dining scene is.
+        </p>
+        <p>
+          We will highlight major categories such as cafés, Japanese, Chinese, Italian, and others, so users can see
+          both dominant and niche cuisines at a glance.
+        </p>
+      </div>
+    </section>
 
-            <!-- ========== SECTION: Cuisine Breakdown (big centered) ========== -->
-            <section id="cuisine" class="section section--stack">
-                <h2 class="section-heading section-heading--center">
-                    Breaking it Down by Cuisine
-                </h2>
-
-                <div class="section__visual section__visual--center">
-                    <div id="viz-cuisine" class="viz-placeholder">
-
-                        <div id="observablehq-cuisine-5b4f15b2"></div>
-
-                        <link rel="stylesheet"
-                            href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-                        <script type="module">
-                            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-                            import define from "https://api.observablehq.com/d/9a6d5a860169013f@201.js?v=4";
-                            new Runtime().module(define, name => {
-                                if (name === "cuisine") return new Inspector(document.querySelector("#observablehq-cuisine-5b4f15b2"));
-                            });
-                        </script>
-                    </div>
-                </div>
-
-                <div class="section__text section__text--narrow section__text--center">
-                    <p>
-                        This visualization will show the share of different cuisine types in Downtown Vancouver. It
-                        gives a quick
-                        overview of which food styles are most common, and how diverse the dining scene is.
-                    </p>
-                    <p>
-                        We will highlight major categories such as cafés, Japanese, Chinese, Italian, and others, so
-                        users can see
-                        both dominant and niche cuisines at a glance.
-                    </p>
-                </div>
-            </section>
-
-            <!-- ========== SECTION: Cafés vs Restaurants (chart LEFT, text RIGHT) ========== -->
-            <section id="categories" class="section section--split">
-                <div class="section__visual">
-                    <h2 class="section-heading">Cafés vs Restaurants</h2>
-                    <div id="" class="viz-embed">
-                        <!-- Observable chart will render here -->
-                    </div>
-                </div>
-
-                <div class="section__text section__text--small">
-                    <p>
-                        This chart compares the total number of cafés and restaurants in Downtown Vancouver.
-                        It provides a simple overview of which type of business is more common in the area.
-                    </p>
-                    <p>
-                        By contrasting these two categories, we can understand whether Downtown is more of a “coffee and
-                        snacks”
-                        neighborhood or a “full-meal dining” destination.
-                    </p>
-                </div>
-            </section>
-
-            <!-- ========== SECTION: Trends Over Time (text LEFT, chart RIGHT, title above chart) ========== -->
-            <section id="trends" class="section section--split section--reverse">
-                <div class="section__text section__text--small">
-                    <p>
-                        This section will show how many cafés and restaurants opened in each year between 2018 and 2023.
-                        It helps reveal growth, decline, and any major shifts in the Downtown dining scene.
-                    </p>
-                    <p>
-                        The chart will use the business licence dataset to summarize openings and closures over time.
-                    </p>
-                </div>
-
-                <div class="section__visual">
-                    <h2 class="section-heading">Trends Over Time</h2>
-                    <div id="viz-trends" class="viz-placeholder">
-                        <div id="observablehq-openings-0aeb08a8"></div>
-
-                        <link rel="stylesheet"
-                            href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-                        <script type="module">
-                            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-                            import define from "https://api.observablehq.com/d/9a6d5a860169013f@208.js?v=4";
-                            new Runtime().module(define, name => {
-                                if (name === "openings") return new Inspector(document.querySelector("#observablehq-openings-0aeb08a8"));
-                            });
-                        </script>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== SECTION: Map (full width, text centered below) ========== -->
-            <section id="map" class="section section--full">
-                <h2 class="section-heading section-heading--center">
-                    Where Cafés and Restaurants Are Located
-                </h2>
-
-                <div id="viz-map" class="viz-placeholder viz-placeholder--map">
-                    <span>Map of active and closed businesses — coming soon</span>
-                </div>
-
-                <div class="section__text section__text--narrow section__text--center">
-                    <p>
-                        This map will show the geographic distribution of cafés and restaurants in Downtown Vancouver,
-                        focusing on the core V6E postal code area.
-                    </p>
-                    <p>
-                        We plan to distinguish between active and closed businesses, so users can see which streets
-                        remain vibrant
-                        and where closures may be clustering over time.
-                    </p>
-                </div>
-            </section>
-
-            <!-- ========== SECTION: Lifespan (chart LEFT, text RIGHT) ========== -->
-            <section id="lifespan" class="section section--split">
-                <div class="section__visual">
-                    <h2 class="section-heading">How Long Do Cafés and Restaurants Survive?</h2>
-                    <div id="viz-lifespan" class="viz-placeholder">
-                        <span>Lifespan comparison — chart coming soon</span>
-                    </div>
-                </div>
-
-                <div class="section__text section__text--small">
-                    <p>
-                        This chart will compare the estimated lifespan of cafés and restaurants by looking at the time
-                        between
-                        licence issue and expiry dates.
-                    </p>
-                    <p>
-                        By summarizing average or median lifespans, we can see which type of business tends to survive
-                        longer
-                        in Downtown Vancouver, and how volatile the dining scene may be.
-                    </p>
-                </div>
-            </section>
-
+    <!-- ========== SECTION: Cafés vs Restaurants (chart LEFT, text RIGHT) ========== -->
+    <section id="categories" class="section section--split">
+      <div class="section__visual">
+        <h2 class="section-heading">Cafés vs Restaurants</h2>
+        <div id="observablehq-cafevsjapanese-24ea40a5" class="viz-embed">
+          <!-- Observable chart will render here -->
         </div>
-    </main>
+      </div>
 
+      <div class="section__text section__text--small">
+        <p>
+          This chart compares the total number of cafés and restaurants in Downtown Vancouver.
+          It provides a simple overview of which type of business is more common in the area.
+        </p>
+        <p>
+          By contrasting these two categories, we can understand whether Downtown is more of a “coffee and snacks”
+          neighborhood or a “full-meal dining” destination.
+        </p>
+      </div>
+    </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer id="data-source" class="site-footer">
-        <div class="container">
-            <p>
-                Data source:
-                <a href="https://opendata.vancouver.ca/explore/dataset/business-licences-2013-to-2024/information/?disjunctive.status"
-                    target="_blank" rel="noopener noreferrer">
-                    City of Vancouver Open Data Portal &mdash; Business Licences 2013–2024
-                </a>
-            </p>
-            <p>
-                Project team: Brewlytics · Course: IAT 355 &mdash; Visual Analytics
-            </p>
+    <!-- ========== SECTION: Trends Over Time (text LEFT, chart RIGHT, title above chart) ========== -->
+    <section id="trends" class="section section--split section--reverse">
+      <div class="section__text section__text--small">
+        <p>
+          This section will show how many cafés and restaurants opened in each year between 2018 and 2023.
+          It helps reveal growth, decline, and any major shifts in the Downtown dining scene.
+        </p>
+        <p>
+          The chart will use the business licence dataset to summarize openings and closures over time.
+        </p>
+      </div>
+
+      <div class="section__visual">
+        <h2 class="section-heading">Trends Over Time</h2>
+        <div id="viz-trends" class="viz-placeholder">
+          <span>Trends over time — line chart coming soon</span>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- ================= SCRIPTS ================= -->
-    <script type="module">
-        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/9a6d5a860169013f@130.js?v=4&api_key=f2a71020944cb3f231cd5c5dd3b7f19104dfebca";
+    <!-- ========== SECTION: Map (full width, text centered below) ========== -->
+    <section id="map" class="section section--full">
+      <h2 class="section-heading section-heading--center">
+        Where Cafés and Restaurants Are Located
+      </h2>
 
-        new Runtime().module(define, name => {
-            if (name === "cafevsjapanese") {
-                return new Inspector(document.querySelector("#observablehq-cafevsjapanese-24ea40a5"));
-            }
-            return null;
-        });
-    </script>
+      <div id="viz-map" class="viz-placeholder viz-placeholder--map">
+        <span>Map of active and closed businesses — coming soon</span>
+      </div>
+
+      <div class="section__text section__text--narrow section__text--center">
+        <p>
+          This map will show the geographic distribution of cafés and restaurants in Downtown Vancouver,
+          focusing on the core V6E postal code area.
+        </p>
+        <p>
+          We plan to distinguish between active and closed businesses, so users can see which streets remain vibrant
+          and where closures may be clustering over time.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== SECTION: Lifespan (chart LEFT, text RIGHT) ========== -->
+    <section id="lifespan" class="section section--split">
+      <div class="section__visual">
+        <h2 class="section-heading">How Long Do Cafés and Restaurants Survive?</h2>
+        <div id="viz-lifespan" class="viz-placeholder">
+          <span>Lifespan comparison — chart coming soon</span>
+        </div>
+      </div>
+
+      <div class="section__text section__text--small">
+        <p>
+          This chart will compare the estimated lifespan of cafés and restaurants by looking at the time between
+          licence issue and expiry dates.
+        </p>
+        <p>
+          By summarizing average or median lifespans, we can see which type of business tends to survive longer
+          in Downtown Vancouver, and how volatile the dining scene may be.
+        </p>
+      </div>
+    </section>
+
+    <div>
+      <div class="flourish-embed flourish-map" data-src="visualisation/26266848"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26266848/thumbnail" width="100%" alt="map visualization" /></noscript></div>
+    </div>
+
+  </div>
+</main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="data-source" class="site-footer">
+    <div class="container">
+      <p>
+        Data source:
+        <a href="https://opendata.vancouver.ca/explore/dataset/business-licences-2013-to-2024/information/?disjunctive.status"
+          target="_blank" rel="noopener noreferrer">
+          City of Vancouver Open Data Portal &mdash; Business Licences 2013–2024
+        </a>
+      </p>
+      <p>
+        Project team: Brewlytics · Course: IAT 355 &mdash; Visual Analytics
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script type="module">
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/9a6d5a860169013f@130.js?v=4&api_key=f2a71020944cb3f231cd5c5dd3b7f19104dfebca";
+
+    new Runtime().module(define, name => {
+      if (name === "cafevsjapanese") {
+        return new Inspector(document.querySelector("#observablehq-cafevsjapanese-24ea40a5"));
+      }
+      return null;
+    });
+  </script>
 </body>
 
 </html>
