@@ -127,11 +127,11 @@ html, body {
 
 #home .panel.home-img {
   position: relative;
-  min-height: 78vh;                 
+  min-height: 100vh;                 
   height: auto;
-  padding: 4rem 4rem 3rem;
+  /* padding: 4rem 4rem 3rem; */
 
-  background-image: url("../img/home-img.png");
+  /* background-image: url("../img/home-img.png"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -139,11 +139,13 @@ html, body {
 
 .home-title-center {
   position: absolute;
-  top: 15%;             
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 15%;              */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   text-align: center;
-  width: 90%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
   font-size: 2.6rem;
   line-height: 1.25;
   font-weight: 700;
