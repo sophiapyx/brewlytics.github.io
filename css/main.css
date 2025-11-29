@@ -13,11 +13,22 @@ html, body {
 }
 
 .panel {
-  scroll-snap-align: start;
+
   height: 100vh;
   flex-direction: column;
   gap: 1;
   padding: 2rem;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+section:not(#home) > .panel {
+  min-height: 100vh;
+  height: auto;
+  padding-bottom: 10rem;   /* space */
 }
 
 .panel-inner {
@@ -166,5 +177,29 @@ html, body {
 .home-description .scroll-down {
   margin-top: 0.8rem;
   font-size: 0.95rem;
+}
+
+#map .flourish-embed.flourish-map {
+  width: 90%;               
+  max-width: 1300px;        
+  height: 100vh;             
+  margin: 0 auto 2rem;
+}
+
+#map .flourish-embed.flourish-map iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.flourish-embed.flourish-bar-chart-race {
+  width: 86%;              
+  max-width: 1100px;     
+  height: 91vh;          
+  margin: 1.5rem auto 2rem;
+}
+
+.flourish-embed.flourish-bar-chart-race iframe {
+  width: 100% !important;
+  height: 100% !important;
 }
 
