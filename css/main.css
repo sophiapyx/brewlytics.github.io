@@ -17,11 +17,14 @@ body {
 
 .panel {
   scroll-snap-align: start;
-  height: 100vh;
+  min-height: 100vh;      
+  height: auto;           
+  display: flex;
   flex-direction: column;
-  gap: 1;
+  gap: 2rem;              
   padding: 2rem;
 }
+
 
 .panel-inner {
   max-width: 100vw;
@@ -92,15 +95,25 @@ body {
 /* End of Navigation */
 
 /* Home Panel Design */
+/* Home Panel Design */
 #home {
-  background-color: #D2E8FF;
+  height: 100vh;
+  background-image: url("../img/home-1.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;  
+  background-size: cover;             
 }
 
-#home .panel.home-img {
+#home .panel.home-1 {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  padding: 0 6vw;
+  background: none;   
+  transform: translateY(-20vh);   
 }
 
 .home-title-center {
@@ -183,3 +196,875 @@ h3{
 .section-text-card p:last-child {
   margin-bottom: 0;
 } */
+ 
+
+#home {
+  background-color: #D2E8FF !important;
+}
+
+.container > section:not(#home) {
+  background: #f7fbff !important; 
+}
+
+#sources {
+  background: #fafcff !important;
+}
+
+.section-text-card {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.caption {
+  background: transparent !important;
+}
+
+.page-illustration,
+.left-illustration {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.panel::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* =========================
+   Page 2 (#intro) Layout
+   ========================= */
+
+#intro .panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#intro .intro-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 6rem;
+}
+
+#intro .intro-illustration {
+  flex: 0 0 500px;
+}
+
+#intro .intro-text {
+  flex: 1;
+}
+
+#intro h2,
+#intro h3 {
+  max-width: 40rem; 
+}
+
+@media (max-width: 900px) {
+  #intro .intro-layout {
+    flex-direction: column-reverse;  
+    text-align: left;
+    padding: 0 1.5rem;
+  }
+
+  #intro .intro-illustration {
+    flex: 0 0 auto;
+  }
+
+  #intro h2,
+  #intro h3 {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Page 3 (#currently-open)
+   ========================= */
+
+#currently-open .currently-open-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 10rem;
+}
+
+#currently-open .currently-open-text {
+  flex: 1;
+}
+
+#currently-open .currently-open-illustration {
+  flex: 0 0 100px;   
+}
+
+#currently-open .currently-open-illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  #currently-open .currently-open-layout {
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  #currently-open .currently-open-illustration {
+    flex: 0 0 auto;
+  }
+}
+
+/* =========================
+   Page 3 Map Resize
+   ========================= */
+
+#currently-open .section-text-card {
+  padding-left: 10rem;    /* breathing room  */
+  padding-right: 10rem;   /* breathing room  */
+  box-sizing: border-box;
+}
+
+#currently-open .flourish-embed.flourish-map {
+  width: 75%;            
+  max-width: 900px;       
+  height: 95vh;           
+  margin: 1rem auto 1rem; 
+  display: block;
+}
+
+#currently-open .flourish-embed.flourish-map iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* =========================
+   Page 4 — Cuisine Layout
+   ========================= */
+
+#cuisine .panel {
+  align-items: flex-start !important;
+}
+
+.cuisine-inline {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;   
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 4rem;              
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.cuisine-images-inline {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cuisine-small-img {
+  width: 55px;         
+  height: auto;
+  object-fit: contain;
+}
+
+.cuisine-inline-text {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.cuisine-row-2 {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cuisine-center-text {
+  flex: 1;
+  max-width: 42rem;
+}
+
+.cuisine-image-right img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+
+  .cuisine-inline,
+  .cuisine-row-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+  }
+
+  .cuisine-images-inline {
+    flex-wrap: wrap;
+  }
+
+  .cuisine-small-img {
+    width: 70px;
+  }
+
+  .cuisine-image-right img {
+    width: 200px;
+  }
+
+}
+
+/* =========================
+   Page 5 — Cafes Updated Layout
+   ========================= */
+
+.cafes-inline {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 4rem;  
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+
+.cafes-icon-small {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cafes-icon-large {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cafes-inline-text {
+  margin: 0;
+  max-width: 42rem;
+}
+
+@media (max-width: 900px) {
+  .cafes-inline {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+
+  .cafes-icon-small,
+  .cafes-icon-large {
+    width: 70px;
+  }
+}
+
+/* =========================
+   Page 6 — Bad News Layout
+   ========================= */
+
+#bad-news .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  justify-content: center;
+  padding: 0 4rem;         
+}
+
+.badnews-illustration-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.badnews-illustration {
+  width: 650px;            
+  max-width: 80%;       
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  #bad-news .panel {
+    padding: 0 2rem;
+  }
+  .badnews-illustration {
+    width: 240px;
+  }
+}
+
+/* =========================
+   Page 7 — Average Lifespan Layout
+   ========================= */
+
+#average-lifespan .panel {
+  align-items: stretch;  
+}
+
+.lifespan-layout {
+  display: flex;
+  align-items: flex-start;      
+  justify-content: space-between;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;              
+}
+
+.lifespan-text h3,
+.lifespan-text h2 {
+  max-width: 40rem;            
+}
+
+.lifespan-viz {
+  flex: 0 0 420px;              
+}
+
+
+.lifespan-viz #visualisation-container {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .lifespan-layout {
+    flex-direction: column-reverse;   
+    padding: 0 1.5rem;
+  }
+
+  .lifespan-viz {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* =========================
+   Page 8 — Overlaps Layout
+   ========================= */
+
+#overlaps .panel {
+  align-items: flex-start;
+  padding: 0 4rem;          
+}
+
+.overlap-inline {
+  width: 100%;
+  display: flex;
+  align-items: center;   
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+}
+
+.overlap-icon {
+  width: 300px;             
+  height: auto;
+  object-fit: contain;
+}
+
+.overlap-inline-text {
+  margin: 0;
+  max-width: 42rem;         
+}
+
+@media (max-width: 900px) {
+  .overlap-inline {
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+
+  #overlaps .panel {
+    padding: 0 1.5rem;
+  }
+}
+
+/* =========================
+   Page 9 — What Does It Mean Layout
+   ========================= */
+
+#whatdoesitmean .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       
+  justify-content: center;
+  padding: 0 4rem;           
+}
+
+
+.wdim-title {
+  max-width: 60rem;
+  text-align: center;
+  margin-bottom: 2.5rem;     
+}
+
+.wdim-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wdim-img {
+  width: 360px;             
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  #whatdoesitmean .panel {
+    padding: 0 1.5rem;
+  }
+
+  .wdim-img {
+    width: 260px;
+  }
+}
+
+/* =========================
+   Page 10 — Growing Asian Population (Final)
+   ========================= */
+
+#growing-asian-population .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 4rem 0;  
+}
+
+.gap-block {
+  max-width: 55rem;
+  text-align: center;
+  margin-bottom: 1.2rem;  
+}
+
+.gap-heading {
+  margin-bottom: 0.8rem;
+  white-space: nowrap;   
+}
+
+.gap-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.gap-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: 60rem;
+  margin-top: 0.3rem;     
+}
+
+.gap-inline-text {
+  margin: 0;
+  max-width: 46rem;      
+  text-align: center;
+}
+
+.gap-icon {
+  width: 300px;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  #growing-asian-population .panel {
+    padding: 2rem 1.5rem 0;
+  }
+
+  .gap-inline {
+    flex-direction: column;
+  }
+
+  .gap-icon {
+    width: 110px;
+  }
+}
+
+/* =========================
+   Page 11 — Economics Layout (Final)
+   ========================= */
+
+#economics .economics-panel {
+  display: flex;              
+  flex-direction: row;
+  align-items: center;        
+  height: 100vh;             
+  padding: 0 6rem;           
+  box-sizing: border-box;
+  max-width: 1100px;        
+  margin: 0 auto;        
+}
+
+
+.econ-img-wrapper {
+  flex: 0 0 auto;
+  margin-right: 2.5rem;     
+}
+
+.econ-img {
+  width: 400px;              
+  height: auto;
+  object-fit: contain;
+}
+
+.econ-text {
+  flex: 1;
+  max-width: 46rem;          
+  text-align: left;
+}
+
+.econ-text h3 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  #economics .economics-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .econ-img-wrapper {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .econ-img {
+    width: 140px;
+  }
+
+  .econ-text {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Page 12 — Economics Continued Layout
+   ========================= */
+
+.econ2-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;     
+  height: 100vh;            
+  padding: 0 6rem;        
+  box-sizing: border-box;
+}
+
+.econ2-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;      
+}
+
+.econ2-text-main h3 {
+  margin: 0;
+  max-width: 42rem;
+  line-height: 1.5;
+}
+
+.econ2-image {
+  flex: 0 0 auto;
+}
+
+.econ2-img {
+  width: 200px;                
+  height: auto;
+  object-fit: contain;
+}
+
+.econ2-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.econ2-list-group {
+  margin-bottom: 0.8rem;
+}
+
+.econ2-list-group ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.econ2-bottom-text {
+  margin: 0;
+  max-width: 42rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .econ2-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .econ2-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .econ2-img {
+    width: 150px;
+  }
+
+  .econ2-text-main h3,
+  .econ2-bottom-text {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Page 13 — Consumer Behaviour Layout
+   ========================= */
+
+.cb-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+  height: 100vh;           
+  padding: 0 6rem;         
+  box-sizing: border-box;
+}
+
+.cb-content {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.cb-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.8rem;      
+}
+
+.cb-img-wrapper {
+  flex: 0 0 auto;
+}
+
+.cb-img {
+  width: 180px;              
+  height: auto;
+  object-fit: contain;
+}
+
+.cb-text-main {
+  flex: 1;
+  max-width: 48rem;
+}
+
+.cb-heading {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.cb-list {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.cb-extra-text h3 {
+  margin: 0;
+  max-width: 52rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .cb-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .cb-top-row {
+    flex-direction: column;
+  }
+
+  .cb-img {
+    width: 150px;
+  }
+
+  .cb-text-main,
+  .cb-extra-text h3 {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Page 14 — Summing It Up Layout
+   ========================= */
+
+.siu-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;     
+  height: 100vh;              
+  padding: 0 10rem;            
+  box-sizing: border-box;
+}
+
+.siu-content {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.siu-top h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  max-width: 50rem;
+}
+
+.siu-list {
+  margin: 0 0 1.8rem 0;        
+  padding-left: 1.3rem;
+}
+
+.siu-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.siu-bottom-text h3 {
+  margin: 0;
+  max-width: 46rem;
+  line-height: 1.5;
+}
+
+.siu-image {
+  flex: 0 0 auto;
+}
+
+.siu-img {
+  width: 300px;               
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .siu-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .siu-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .siu-img {
+    width: 140px;
+  }
+
+  .siu-top h3,
+  .siu-bottom-text h3 {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Page 15 — Conclusion Layout
+   ========================= */
+
+.conclusion-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;     
+  height: 100vh;
+  padding: 0 10rem;         
+  box-sizing: border-box;
+}
+
+.conclusion-content {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+  align-items: center;        
+  gap: 1rem;                   
+  margin-top: 10rem;            
+}
+
+.conclusion-top h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  max-width: 50rem;
+  text-align: left;
+}
+
+.conclusion-list {
+  margin: 0;
+  padding-left: 1.4rem;
+  max-width: 48rem;
+}
+
+.conclusion-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;     
+}
+
+.conclusion-img-wrapper {
+  flex: 0 0 auto;
+}
+
+.conclusion-img {
+  width: 300px;                
+  height: auto;
+  object-fit: contain;
+}
+
+.conclusion-text h3 {
+  margin: 0;
+  max-width: 48rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .conclusion-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .conclusion-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .conclusion-img {
+    width: 150px;
+  }
+}

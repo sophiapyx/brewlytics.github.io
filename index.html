@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <section id="home">
-      <div class="panel home-img">
+      <div class="panel home-1">
         <h1 class="h1-title">
           An Overview of Restaurant Industry in Vancouver
         </h1>
@@ -25,104 +25,185 @@
     </section>
 
     <section id="intro">
-      <div class="panel intro">
-        <h2>In 2020, the DailyHive reported that there were 715 food-and-beverage-based businesses, including 392
+  <div class="panel intro">
+    <div class="intro-layout">
+
+      <div class="intro-illustration">
+        <img
+          src="img/2.png"
+          alt="Downtown Vancouver restaurant district illustration"
+          class="page-illustration"
+        />
+      </div>
+
+      <div class="intro-text">
+        <h2>
+          In 2020, the DailyHive reported that there were 715 food-and-beverage-based businesses, including 392
           quick-service eateries, 135 full-service and sit-down restaurants, 110 retailer dealers, and 78 liquor primary
           businesses.
         </h2>
 
-        <h2>Yet in July 2025, the Vancouver Sun released an article talking about how a lack of customers is causing
+        <h2>
+          Yet in July 2025, the Vancouver Sun released an article talking about how a lack of customers is causing
           strain to the restaurant industry, which in turn affects 27 other sectors.
         </h2>
 
-        <h3>To understand what this looks like on a micro scale, we zoomed in on V6E, a dense and highly competitive
+        <h3>
+          To understand what this looks like on a micro scale, we zoomed in on V6E, a dense and highly competitive
           area in the heart of Downtown Vancouver.
         </h3>
-
       </div>
-    </section>
 
-    <section id="currently-open">
-      <div class="panel">
+    </div>
+  </div>
+</section>
+
+
+     <section id="currently-open">
+  <div class="panel">
+
+    <div class="currently-open-layout">
+
+      <div class="currently-open-text">
         <h3>
-          Using our dataset, we identified all the restaurants that are currently open. Here’s where they are located on
-          the map.
-        </h3>
-        <div class="section-text-card">
-          <div class="flourish-embed flourish-map" data-src="visualisation/26266848">
-            <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
-                src="https://public.flourish.studio/visualisation/26266848/thumbnail" width="100%"
-                alt="map visualization" /></noscript>
-          </div>
-          <p>
-            (Static map showing active restaurants)
-          </p>
-        </div>
-
-        <h3>This gives us a sense of how packed the neighbourhood is, and it also shows the competitiveness of the food
-          industry here.
+          Using our dataset, we identified all the restaurants that are currently open.
+          Here’s where they are located on the map.
         </h3>
       </div>
-    </section>
+
+      <div class="currently-open-illustration">
+        <img src="img/3.png" class="page-illustration" alt="Illustration">
+      </div>
+
+    </div>
+
+    <div class="section-text-card">
+      <div class="flourish-embed flourish-map" data-src="visualisation/26266848"></div>
+      <p>(Static map showing active restaurants)</p>
+    </div>
+    <h3>This gives us a sense of how packed the neighbourhood is...</h3>
+    </div>
+  </section>
+
 
     <section id="cuisine">
-      <div class="panel ">
-        <h3>Looking at the current landscape by cuisine type.</h3>
-        <div id="visualisation-container">
-          <div id="observablehq-cuisine-bfc379f4"></div>
+  <div class="panel cuisine-panel">
 
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+    <div class="cuisine-inline">
+  <div class="cuisine-images-inline">
+    <img src="img/4.png" class="cuisine-small-img" />
+    <img src="img/5.png" class="cuisine-small-img" />
+    <img src="img/6.png" class="cuisine-small-img" />
+    <img src="img/7.png" class="cuisine-small-img" />
+  </div>
 
-          <script type="module">
-            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-            import define from "https://api.observablehq.com/d/9a6d5a860169013f@228.js?v=4";
-            new Runtime().module(define, name => {
-              if (name === "cuisine") return new Inspector(document.querySelector("#observablehq-cuisine-bfc379f4"));
-            });
-          </script>
-        </div>
-        <h3>One category clearly dominates: Japanese restaurants. In 2022, Vancouver Is Awesome even called Vancouver
+  <h3 class="cuisine-inline-text">
+    Looking at the current landscape by cuisine type.
+  </h3>
+</div>
+
+    <div id="visualisation-container">
+      <div id="observablehq-cuisine-bfc379f4"></div>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
+      <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/9a6d5a860169013f@228.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "cuisine") return new Inspector(document.querySelector("#observablehq-cuisine-bfc379f4"));
+        });
+      </script>
+    </div>
+
+    <div class="cuisine-row-2">
+      
+      <div class="cuisine-center-text">
+        <h3>
+          One category clearly dominates: Japanese restaurants. In 2022, Vancouver Is Awesome even called Vancouver 
           the “non-Japanese sushi capital of the world”. So, the large presence of sushi spots isn’t surprising.
         </h3>
-        <div class="section-text-card">
-          <p>
-            (map showing active Japanese restaurants)
-          </p>
-        </div>
-
       </div>
-    </section>
+
+      <div class="cuisine-image-right">
+        <img src="img/8.png" class="cuisine-medium-img" />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
     <section id="cafes">
-      <div class="panel">
+  <div class="panel">
 
-        <h3>Another notable category is cafés.</h3>
-        <div class="section-text-card">
-          <p>
-            (map showing active cafes)
-          </p>
-        </div>
+    <div class="cafes-inline">
+      <img src="img/9.png" alt="Cafe icon" class="cafes-icon-small" />
+      <h3 class="cafes-inline-text">
+        Another notable category is cafés.
+      </h3>
+    </div>
 
-          <h3>
-            The Piccolo brothers, who have often been dubbed as the “Godfathers of coffee in Vancouver”, opened 49th
-            Parallel Coffee in 2004, helped kickstart the Third Wave Coffee movement, which focuses on the nuanced
-            flavor of the beans themselves and where coffee is meticulously prepared and served in quality glassware or
-            ceramics and highlights single origin coffees through pour overs and classic espresso beverages. Since then,
-            specialty coffee has become a major part of the city’s identity, and that is visible in our dataset as well.
-          </h3>
+    <div class="section-text-card">
+      <p>(map showing active cafes)</p>
+    </div>
 
-          <p class="caption">There's also <i>allegedly</i> some drama with the Piccolo brothers but that is not my story to tell.</p>
-      </div>
-    </section>
+    <div class="cafes-inline big">
+      <img src="img/10.png" alt="Piccolo brothers illustration" class="cafes-icon-large" />
+      <h3 class="cafes-inline-text">
+        The Piccolo brothers, who have often been dubbed as the “Godfathers of coffee in Vancouver”, opened
+        49th Parallel Coffee in 2004, helped kickstart the Third Wave Coffee movement, which focuses on the
+        nuanced flavor of the beans themselves and where coffee is meticulously prepared and served in quality
+        glassware or ceramics and highlights single origin coffees through pour overs and classic espresso
+        beverages. Since then, specialty coffee has become a major part of the city’s identity, and that is
+        visible in our dataset as well.
+      </h3>
+    </div>
+
+    <p class="caption">There's also <i>allegedly</i> some drama with the Piccolo brothers but that is not my story to tell.</p>
+
+  </div>
+</section>
 
     <section id="bad-news">
-      <div class="panel">
-        <h2>Yet sometimes, all good things have to come to an end…</h2>
-      </div>
-    </section>
+  <div class="panel">
+
+    <h2>Yet sometimes, all good things have to come to an end…</h2>
+
+    <div class="badnews-illustration-wrapper">
+      <img src="img/11.png" alt="Closing Illustration" class="badnews-illustration">
+    </div>
+
+  </div>
+</section>
+
 
     <section id="average-lifespan">
-      <div class="panel">
+  <div class="panel">
+    <div class="lifespan-layout">
+
+      <div class="lifespan-text">
+        <h3>
+          This box plot shows the average lifespan of restaurants by cuisine. From here, we noticed a surprising
+          pattern:
+        </h3>
+
+        <h3>
+          Japanese restaurants are everywhere, but they tend to stay open for less time on average, while something
+          like an Italian restaurants, although there are fewer restaurants, actually have longer lifespans.
+        </h3>
+
+        <h3>
+          Even cafés, despite their cultural significance, don’t seem last as long as the Italian establishments too.
+        </h3>
+
+        <h3>
+          So popularity doesn’t always equal survival?
+        </h3>
+      </div>
+
+      <div class="lifespan-viz">
         <div id="visualisation-container">
           <div id="observablehq-lifespan-f21ef443"></div>
 
@@ -138,28 +219,25 @@
             });
           </script>
         </div>
-
-        <h3>This box plot shows the average lifespan of restaurants by cuisine. From here, we noticed a surprising
-          pattern:</h3>
-
-        <h2>Japanese restaurants are everywhere, but they tend to stay open for less time on average, while something
-          like an Italian restaurants, although there are fewer restaurants, actually have longer lifespans</h2>
-
-        <h3>Even cafés, despite their cultural significance, don’t seem last as long as the Italian establishments too
-        </h3>
-
-        <h3>So popularity doesn’t always equal survival?</h3>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
 
     <section id="overlaps">
       <div class="panel">
 
-        <h3>Digging deeper, we noticed that several addresses had multiple restaurants open in the same space across
+        <div class="overlap-inline">
+         <img src="img/12.png" alt="Turnover illustration" class="overlap-icon" />
+         <h3 class="overlap-inline-text">
+        Digging deeper, we noticed that several addresses had multiple restaurants open in the same space across
           different years.
           This suggests a high level of turnover, restaurants closing, new ones taking over the same units, and the
           cycle repeating. The neighbourhood constantly reshapes itself, reflecting changing trends, competition, and
           business pressures.</h3>
+        </div>
 
         <div class="section-text-card">
           <p>
@@ -172,111 +250,213 @@
     <section id="whatdoesitmean">
       <div class="panel">
 
-        <h2>So what does this all mean? To understand the bigger picture, we need to look at the intersection of
+        <h2 class="wdim-title">
+          So what does this all mean? To understand the bigger picture, we need to look at the intersection of
           culture, economics and shifting consumer behaviour
         </h2>
+        <div class="wdim-img-wrapper">
+      <img src="img/13.png" alt="Big picture illustration" class="wdim-img">
+        </div>
       </div>
     </section>
 
     <section id="growing-asian-population">
       <div class="panel">
 
-        <h3>There could be a few reasons as to why there are so many Japanese restaurants:
-          <ul>Vancouver has one of the largest Asian populations outside of Asia</ul>
-          <ul>The fact that the ocean gives us access to fresh fish</ul>
-          <ul>The fact that Vancouver created the California Roll</ul>
-          <ul>The large immigrant population also leads to fusion dishes such as sushi taco, sushi pizza, etc.</ul>
+        <div class="gap-block">
+         <h3 class="gap-heading">
+        There could be a few reasons as to why there are so many Japanese restaurants:
         </h3>
+         
+        <ul class="gap-list">
+         <li>Vancouver has one of the largest Asian populations outside of Asia</li>
+         <li>The fact that the ocean gives us access to fresh fish</li>
+         <li>The fact that Vancouver created the California Roll</li>
+         <li>The large immigrant population also leads to fusion dishes such as sushi taco, sushi pizza, etc.</li>
+       </ul>
+      </div>
 
-        <h2>Cultural demand makes Japanese restaurants open frequently, but that doesn’t always ensure they stay open.
+        <div class="gap-inline">
+      <h2 class="gap-inline-text">
+        Cultural demand makes Japanese restaurants open frequently, but that doesn’t always ensure they stay open.
         </h2>
+         <img src="img/14.png" alt="Cultural demand illustration" class="gap-icon" />
+       </div>
       </div>
     </section>
 
     <section id="economics">
-      <div class="panel">
+  <div class="panel economics-panel">
 
-        <h3>Economics can also be another factor.
-          The fact is, there are so many Japanese restaurants that are evidently saturating the area, creating more
-          competition, potentially leading to shorter lifespans. Meanwhile the stark contrast when it comes to how many
-          Italian restaurants means they face less competition, and are therefore, more likely to survive
-          Oversupply seems to shorten lifespans, while niche, differentiated restaurants tend to last longer. Ultimately
-          being popular doesn’t always guarantee survival!
+    <div class="econ-img-wrapper">
+      <img src="img/15.png" alt="Economics illustration" class="econ-img">
+    </div>
 
-        </h3>
-      </div>
-    </section>
+    <div class="econ-text">
+      <h3>
+        Economics can also be another factor. The fact is, there are so many Japanese restaurants that are evidently
+        saturating the area, creating more competition, potentially leading to shorter lifespans. Meanwhile the stark
+        contrast when it comes to how many Italian restaurants means they face less competition, and are therefore, more
+        likely to survive Oversupply seems to shorten lifespans, while niche, differentiated restaurants tend to last
+        longer. Ultimately being popular doesn’t always guarantee survival!
+      </h3>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="economics-continued">
-      <div class="panel">
+  <div class="panel econ2-panel">
 
-        <h3>Economic pressures extend far beyond competition. Restaurant rent in Vancouver can range from $3,500 to
+    <div class="econ2-top-row">
+      <div class="econ2-text-main">
+        <h3>
+          Economic pressures extend far beyond competition. Restaurant rent in Vancouver can range from $3,500 to
           $15,000 per month, and in some cases, much higher. For example, Cioppino’s Mediterranean Grill in Yaletown
           closed in 2024 after 25 years when its monthly rent jumped to $60,000.
-          With rising costs in:</h3>
+          With rising costs in:
+        </h3>
+      </div>
+
+      <div class="econ2-image">
+        <img src="img/16.png" alt="Rent pressures illustration" class="econ2-img">
+      </div>
+    </div>
+
+    <div class="econ2-bottom">
+      <div class="econ2-list-group">
         <ul>Rent</ul>
         <ul>food and ingredients</ul>
         <ul>Utilities</ul>
         <ul>labour</ul>
-        <h3>
-          …restaurants face increasingly tight margins.
-          Combined with heavy competition, these pressures can contribute to frequent turnover in such areas.
-        </h3>
       </div>
-    </section>
+
+      <h3 class="econ2-bottom-text">
+        …restaurants face increasingly tight margins.
+        Combined with heavy competition, these pressures can contribute to frequent turnover in such areas.
+      </h3>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="consumer-behaviour">
-      <div class="panel">
+  <div class="panel cb-panel">
 
-        <h3>Consumer behaviour has also shifted dramatically.According to Michelin-starred chef J-C Poirier and Chambar
-          co-owner Kerri Green:
-          <ul>There’s a shortage of staff, forcing restaurants to reduce hours</ul>
-          <ul>Downtown foot traffic has dropped: “There’s no one downtown… People aren’t going out after work”</ul>
-          <ul>Guests now prefer affordable and fast options</ul>
-          <ul>When people’s personal budgets shrink, dining out is often the first expense people cut</ul>
-        </h3>
+    <div class="cb-content">
+
+      <div class="cb-top-row">
+        <div class="cb-img-wrapper">
+          <img src="img/17.png" alt="Consumer behaviour illustration" class="cb-img">
+        </div>
+
+        <div class="cb-text-main">
+          <h3 class="cb-heading">
+            Consumer behaviour has also shifted dramatically. According to Michelin-starred chef J-C Poirier and
+            Chambar co-owner Kerri Green:
+          </h3>
+          <ul class="cb-list">
+            <li>There’s a shortage of staff, forcing restaurants to reduce hours</li>
+            <li>Downtown foot traffic has dropped: “There’s no one downtown… People aren’t going out after work”</li>
+            <li>Guests now prefer affordable and fast options</li>
+            <li>When people’s personal budgets shrink, dining out is often the first expense people cut</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cb-extra-text">
         <h3>
           Social media and Michelin listings, built hype to boost the restaurant’s popularity, but that the novelty has
           worn off, with Poirier saying “There was excitement at first, but now people care less.” He adds: “In Europe,
           people embrace that dining experience. Here, people want good food and good value, without being overly
-          challenged.”
-          These shifting habits add yet another layer to the challenges restaurants face today.
+          challenged.” These shifting habits add yet another layer to the challenges restaurants face today.
         </h3>
       </div>
-    </section>
+
+    </div>
+
+  </div>
+</section>
+
+
 
     <section id="summing-it-up">
-      <div class="panel">
+  <div class="panel siu-panel">
 
-        <h3>So what does this all mean?
-          The lifespan of restaurants are shaped by three key forces working together:
-          <ul>Culture influences what types of restaurants open</ul>
-          <ul>Economics determines which ones can survive</ul>
-          <ul>Consumer habits have changed and not for the better</ul>
-        </h3>
-        <h3>So is it because certain cuisines are more popular than others or social media hypes up a specific new
-          restaurant? Maybe, but also looking at how the three factors interact together in a neighbourhood that is
-          constantly shifting and reinventing itself is crucial to its success.
-        </h3>
-      </div>
-    </section>
+    <div class="siu-content">
 
-    <section id="conclusion">
-      <div class="panel">
-
-        <h3>Restaurants open, close, and reopen under new names, not because the neighbourhood is failing, but because
-          it is dynamic, competitive, and continually evolving.
-          Our data shows:
-          <ul>Popular cuisines appear quickly but also churn quickly</ul>
-          <ul>Less saturated categories are more likely to remain open</ul>
-          <ul>The neighbourhood’s design naturally encourages experimentation and renewal</ul>
-        </h3>
+      <div class="siu-top">
         <h3>
-          In many ways, our data reflects Vancouver’s food culture as a whole: diverse, fast-moving, culturally driven,
-          economically pressured, and always hungry for something new.
+          So what does this all mean? The lifespan of restaurants are shaped by three key forces working together:
         </h3>
+        <ul class="siu-list">
+          <li>Culture influences what types of restaurants open</li>
+          <li>Economics determines which ones can survive</li>
+          <li>Consumer habits have changed and not for the better</li>
+        </ul>
       </div>
-    </section>
+
+      <div class="siu-bottom-row">
+        <div class="siu-bottom-text">
+          <h3>
+            So is it because certain cuisines are more popular than others or social media hypes up a specific new
+            restaurant? Maybe, but also looking at how the three factors interact together in a neighbourhood that is
+            constantly shifting and reinventing itself is crucial to its success.
+          </h3>
+        </div>
+
+        <div class="siu-image">
+          <img src="img/18.png" alt="Three factors illustration" class="siu-img">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="conclusion">
+  <div class="panel conclusion-panel">
+
+    <div class="conclusion-content">
+
+      <div class="conclusion-top">
+        <h3>
+          Restaurants open, close, and reopen under new names, not because the neighbourhood is failing,
+          but because it is dynamic, competitive, and continually evolving.
+        </h3>
+
+        <ul class="conclusion-list">
+          <li>Popular cuisines appear quickly but also churn quickly</li>
+          <li>Less saturated categories are more likely to remain open</li>
+          <li>The neighbourhood’s design naturally encourages experimentation and renewal</li>
+        </ul>
+      </div>
+
+      <div class="conclusion-bottom-row">
+
+        <div class="conclusion-img-wrapper">
+          <img src="img/19.png" alt="Conclusion illustration" class="conclusion-img">
+        </div>
+
+        <div class="conclusion-text">
+          <h3>
+            In many ways, our data reflects Vancouver’s food culture as a whole: diverse, fast-moving,
+            culturally driven, economically pressured, and always hungry for something new.
+          </h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 
     <section>
       <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/26432538">
