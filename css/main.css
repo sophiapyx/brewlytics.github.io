@@ -3,8 +3,9 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-  
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif; */
+  flex: 1;
+  background-color: #F6F1EE
 }
 
 /* Panels */
@@ -17,12 +18,16 @@ body {
 
 .panel {
   scroll-snap-align: start;
-  min-height: 100vh;      
-  height: auto;           
+  min-height: 95vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;              
-  padding: 2rem;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1.5rem;
+
 }
 
 .panel-inner {
@@ -37,8 +42,47 @@ body {
 
 /* End of Panel Work */
 
+/* Text Styles */
+.h1-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 115vh;
+  padding-top: 0;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+    color: #323233;
+
+}
+
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+    font-size: 1.3rem;
+      color: #323233;
+
+}
+
+.caption {
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  max-width: 80vw;
+  color: #53282A;
+}
+
+/* End of Text Styles */
+
 #visualisation-container {
   max-width: fit-content;
+  max-height: auto;
+    align-items: center;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -46,9 +90,8 @@ body {
 #data-source .panel {
   height: auto;
   min-height: 0;
-  padding: 3rem 0 5rem;
+  /* padding: 3rem 0 5rem; */
   scroll-snap-align: start;
-  border-top: 1px solid #e4e7f0;
 }
 
 /* Navigation */
@@ -57,89 +100,63 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #beebf8;
-  padding: 8px;
-  box-sizing: border-box;
+  padding: 2px;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
+  /* background-color: #fff; */
 }
 
 .nav-grid {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(16, 1fr);
-  justify-content: space-around; 
-  /* width: 100%; */
+  gap: 5px;
 }
 
 .nav-item {
-  padding: 8px;
-  text-align: center;
-  align-content: center;
+  height: 1rem;
+  background: #31423c;
+  border-radius: 0.3rem;
+  cursor: pointer;
   position: relative;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.nav-item a {
-  text-decoration: none;
-  color: #050505;
-  font-size: 0.8rem;
+/* Active segment (based on scroll) */
+.nav-item.active a {
+  /* background: #0196e6; */
 }
 
-.navbar a:hover { 
-  background: #f1f1f1; 
-  color: black; 
-}
-
-.navbar a.active { 
-  background-color: #0196e6; 
-  color: white; 
-  padding: auto;
-}
-
-/* tooltip sources: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_tooltip, https://dev.to/mechcloud_academy/comprehensive-css-attr-function-tutorial-eb1 */
-
+/* Tooltip */
 .nav-item::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
-  color: white;
+  background: #323233;
+  color: #F6F1EE;
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 0.75rem;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s ease;
+  transition: opacity 0.15s ease;
 }
 
-.nav-item::before {
-  content: "";
-  position: absolute;
-  bottom: 38px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.18s ease;
+.nav-item:hover::after {
+  opacity: 1;
 }
 
-.nav-item:hover::after, .nav-item:hover::before { 
-  opacity: 1; 
-}
-
-/* Home Panel Design */
 /* Home Panel Design */
 #home {
-  background-color: #D2E8FF;
-  background-image: url("../img/home-1.png");
+  height: 100vh;
+  background-color: #708478;
+  /* background-image: url("../img/home-1.png"); */
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
+  background: linear-gradient(0deg,rgba(246, 241, 238, 1) 0%, rgba(112, 132, 120, 1) 70%);
+
 }
 
 #home .panel.home-1 {
@@ -151,9 +168,7 @@ body {
   background: none;
 }
 
-
 .scroll-down {
-  /* margin-top: 0.8rem; */
   font-size: 0.95rem;
   position: absolute;
   bottom: 10%;
@@ -164,26 +179,6 @@ body {
 }
 
 /* End of Home Panel Design */
-
-/* Text Styles */
-.h1-title {
-  font-size: 3rem;
-  text-align: center;
-}
-
-h2{
-  max-width: 50vw;
-}
-
-h3{
-  max-width: 50vw;
-}
-
-.caption{
-  max-width: 20vw;
-}
-
-/* End of Text Styles */
 
 /* .container > section:not(#home) {
   background: #f7fbff !important; 
@@ -207,7 +202,6 @@ h3{
 .page-illustration,
 .left-illustration {
   max-width: 500px;
-  /* width: 100%; */
   height: auto;
 }
 
@@ -222,31 +216,31 @@ h3{
    ========================= */
 
 #intro .panel {
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  /* justify-content: center; */
 }
 
 #intro .intro-layout {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   gap: 3rem;
-  /* max-width: 1120px; */
   margin: 0 auto;
-  padding: 0 6rem;
+  /* padding: 0 6rem; */
 }
 
-#intro .intro-illustration {
+/* #intro .intro-illustration {
   flex: 0 0 500px;
+} */
+
+.intro-big-text {
+  max-width: 60vw;
 }
 
-#intro .intro-text {
-  flex: 1;
-}
-
-#intro h2,
-#intro h3 {
-  max-width: 40rem; 
+.intro-text {
+  max-width: 60vw;
+  text-align: end;
+  align-content: end;
 }
 
 /* =========================
@@ -257,39 +251,41 @@ h3{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  /* gap: 3rem; */
   /* max-width: 1160px; */
-  margin: 0 auto;
-  padding: 0 10rem;
+  margin: 0 ;
+  /* padding: 0 10rem; */
 }
 
 #currently-open .currently-open-text {
-  flex: 1;
+  /* max-width: 70vw; */
+    /* font-weight: 600; */
+
 }
 
-#currently-open .currently-open-illustration {
-  flex: 0 0 100px;   
-}
+/* #currently-open .currently-open-illustration {
+  flex: 0 0 100px;
+} */
 
-#currently-open .currently-open-illustration img {
+/* #currently-open .currently-open-illustration img {
   max-width: 100%;
   height: auto;
-}
-
-/* =========================
-   Page 3 Map Resize
-   ========================= */
+} */
 
 #currently-open .section-text-card {
-  padding-left: 10rem;    /* breathing room  */
-  padding-right: 10rem;   /* breathing room  */
+  padding-left: 10rem;
+  /* breathing room  */
+  padding-right: 10rem;
+  /* breathing room  */
   box-sizing: border-box;
 }
 
+/* Map CSS  */
 #currently-open .flourish-embed.flourish-map {
-  width: 75%;            
-  max-width: 900px;       
-  margin: 1rem auto 1rem; 
+  width: 75%;
+  max-width: 900px;
+  margin: 1rem auto;
+  margin-top: 0%;
   display: block;
 }
 
@@ -304,72 +300,60 @@ h3{
    ========================= */
 
 #cuisine .panel {
-  align-items: flex-start !important;
+  /* align-items: flex-start !important; */
+  /* height: 95vw; */
 }
 
 .cuisine-inline {
-  width: 100%;
-  justify-content: flex-start;   
+  justify-content: flex-start;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0 4rem;              
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-
-.cuisine-images-inline {
+/* .cuisine-images-inline {
   display: flex;
   gap: 0.75rem;
-}
+} */
 
-.cuisine-small-img {
-  width: 55px;         
+/* .cuisine-small-img {
+  width: 55px;
   height: auto;
   object-fit: contain;
-}
+} */
 
 .cuisine-inline-text {
   margin: 0;
-  max-width: 40rem;
+  /* max-width: 40rem; */
 }
 
 .cuisine-row-2 {
-  margin-top: 3rem;
-  /* width: 100%; */
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   align-items: center;
-  gap: 3rem;
-  padding: 0 4rem;
-  max-width: 1200px;
+  /* gap: 3rem; */
+  /* padding: 0 4rem; */
+  /* max-width: 1200px; */
   margin-left: auto;
-  margin-right: auto;
+  text-align: end;
+  max-width: 45vw;
 }
 
-.cuisine-center-text {
-  flex: 1;
-  max-width: 42rem;
-}
-
-.cuisine-image-right img {
+/* .cuisine-image-right img {
   width: 300px;
   height: auto;
   object-fit: contain;
-}
+} */
 
 /* =========================
    Page 5 — Cafes Updated Layout
    ========================= */
 
 .cafes-inline {
-  /* width: 100%; */
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 0 4rem;  
-  max-width: 1200px;
-  margin: 1rem auto;
+  /* gap: 1rem; */
+  /* padding: 0 4rem; */
+  /* max-width: 1200px; */
+  /* margin: 1rem auto; */
 }
 
 .cafes-icon-small {
@@ -394,10 +378,14 @@ h3{
    ========================= */
 
 #bad-news .panel {
+  /* background-color: #81beff; */
+  min-height: 100vh;
   flex-direction: column;
-  align-items: center;      
+  align-items: center;
   justify-content: center;
-  padding: 0 4rem;         
+  padding: 0 4rem;
+background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 100%);
+
 }
 
 .badnews-illustration-wrapper {
@@ -408,8 +396,8 @@ h3{
 }
 
 .badnews-illustration {
-  width: 650px;            
-  max-width: 80%;       
+  width: 650px;
+  max-width: 80%;
   height: auto;
   object-fit: contain;
 }
@@ -419,60 +407,59 @@ h3{
    ========================= */
 
 #average-lifespan .panel {
-  align-items: stretch;  
+  align-items: stretch;
 }
 
 .lifespan-layout {
   display: flex;
-  align-items: flex-start;      
+  align-items: flex-start;
   justify-content: space-between;
   gap: 2.5rem;
-  max-width: 1200px;
+  max-width: 60vw;
   margin: 0 auto;
-  padding: 0 4rem;              
+  /* padding: 0 4rem; */
 }
 
-.lifespan-text h3,
+/* .lifespan-text h3,
 .lifespan-text h2 {
-  max-width: 40rem;            
+  max-width: 40rem;
 }
 
 .lifespan-viz {
-  flex: 0 0 420px;              
+  flex: 0 0 420px;
 }
 
 
 .lifespan-viz #visualisation-container {
   margin: 0;
-}
+} */
 
 /* =========================
    Page 8 — Overlaps Layout
    ========================= */
 
 #overlaps .panel {
-  align-items: flex-start;
-  padding: 0 4rem;          
+  /* align-items: flex-start; */
+  /* padding: 0 4rem; */
 }
 
 .overlap-inline {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  align-items: center;   
-  gap: 1rem;
-  max-width: 1200px;
-  margin: 0 auto 1.5rem;
+  align-items: center;
+  /* max-width: 1200px; */
+  /* margin: 0 auto 1.5rem; */
 }
 
-.overlap-icon {
-  width: 300px;             
+/* .overlap-icon {
+  width: 300px;
   height: auto;
   object-fit: contain;
-}
+} */
 
 .overlap-inline-text {
-  margin: 0;
-  max-width: 42rem;         
+  /* margin: 0; */
+  max-width: 60vw;
 }
 
 /* =========================
@@ -480,17 +467,17 @@ h3{
    ========================= */
 
 #whatdoesitmean .panel {
+  background-color: #708478;
   flex-direction: column;
-  align-items: center;       
+  align-items: center;
   justify-content: center;
-  padding: 0 4rem;           
+  /* padding: 0 4rem; */
 }
 
-
-.wdim-title {
+/* .wdim-title {
   max-width: 60rem;
   text-align: center;
-  margin-bottom: 2.5rem;     
+  margin-bottom: 2.5rem;
 }
 
 .wdim-img-wrapper {
@@ -500,11 +487,11 @@ h3{
 }
 
 .wdim-img {
-  width: 360px;             
+  width: 360px;
   max-width: 80%;
   height: auto;
   object-fit: contain;
-}
+} */
 
 /* =========================
    Page 10 — Growing Asian Population (Final)
@@ -513,18 +500,18 @@ h3{
 #growing-asian-population .panel {
   flex-direction: column;
   align-items: center;
-  padding: 3rem 4rem 0;  
+  padding: 3rem 4rem 0;
 }
 
 .gap-block {
   max-width: 55rem;
   text-align: center;
-  margin-bottom: 1.2rem;  
+  margin-bottom: 1.2rem;
 }
 
 .gap-heading {
   margin-bottom: 0.8rem;
-  white-space: nowrap;   
+  white-space: nowrap;
 }
 
 .gap-list {
@@ -541,12 +528,12 @@ h3{
   justify-content: center;
   gap: 0.8rem;
   max-width: 60rem;
-  margin-top: 0.3rem;     
+  margin-top: 0.3rem;
 }
 
 .gap-inline-text {
   margin: 0;
-  max-width: 46rem;      
+  max-width: 46rem;
   text-align: center;
 }
 
@@ -561,28 +548,28 @@ h3{
 
 #economics .economics-panel {
   flex-direction: row;
-  align-items: center;        
-  padding: 0 6rem;           
+  align-items: center;
+  padding: 0 6rem;
   box-sizing: border-box;
-  max-width: 1100px;        
-  margin: 0 auto;        
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 
 .econ-img-wrapper {
   flex: 0 0 auto;
-  margin-right: 2.5rem;     
+  margin-right: 2.5rem;
 }
 
 .econ-img {
-  width: 400px;              
+  width: 400px;
   height: auto;
   object-fit: contain;
 }
 
 .econ-text {
   flex: 1;
-  max-width: 46rem;          
+  max-width: 46rem;
   text-align: left;
 }
 
@@ -598,8 +585,8 @@ h3{
 .econ2-panel {
   flex-direction: column;
   align-items: center;
-  justify-content: center;     
-  padding: 0 6rem;        
+  justify-content: center;
+  padding: 0 6rem;
   box-sizing: border-box;
 }
 
@@ -609,7 +596,7 @@ h3{
   justify-content: center;
   gap: 2.5rem;
   max-width: 1100px;
-  margin: 0 auto 1.5rem;      
+  margin: 0 auto 1.5rem;
 }
 
 .econ2-text-main h3 {
@@ -623,7 +610,7 @@ h3{
 }
 
 .econ2-img {
-  width: 200px;                
+  width: 200px;
   height: auto;
   object-fit: contain;
 }
@@ -654,8 +641,8 @@ h3{
 
 .cb-panel {
   align-items: center;
-  justify-content: center;    
-  padding: 0 6rem;         
+  justify-content: center;
+  padding: 0 6rem;
   box-sizing: border-box;
 }
 
@@ -669,7 +656,7 @@ h3{
   align-items: flex-start;
   justify-content: center;
   gap: 2.5rem;
-  margin-bottom: 1.8rem;      
+  margin-bottom: 1.8rem;
 }
 
 .cb-img-wrapper {
@@ -677,7 +664,7 @@ h3{
 }
 
 .cb-img {
-  width: 180px;              
+  width: 180px;
   height: auto;
   object-fit: contain;
 }
@@ -709,8 +696,8 @@ h3{
 
 .siu-panel {
   align-items: center;
-  justify-content: center;     
-  padding: 0 10rem;            
+  justify-content: center;
+  padding: 0 10rem;
   box-sizing: border-box;
 }
 
@@ -726,7 +713,7 @@ h3{
 }
 
 .siu-list {
-  margin: 0 0 1.8rem 0;        
+  margin: 0 0 1.8rem 0;
   padding-left: 1.3rem;
 }
 
@@ -748,7 +735,7 @@ h3{
 }
 
 .siu-img {
-  width: 300px;               
+  width: 300px;
   height: auto;
   object-fit: contain;
 }
@@ -759,8 +746,8 @@ h3{
 
 .conclusion-panel {
   align-items: center;
-  justify-content: center;     
-  padding: 0 10rem;         
+  justify-content: center;
+  padding: 0 10rem;
   box-sizing: border-box;
 }
 
@@ -768,10 +755,10 @@ h3{
   max-width: 1100px;
   width: 100%;
   flex-direction: column;
-  justify-content: center;    
-  align-items: center;        
-  gap: 1rem;                   
-  margin-top: 10rem;            
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10rem;
 }
 
 .conclusion-top h3 {
@@ -792,7 +779,7 @@ h3{
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin-top: 1rem;     
+  margin-top: 1rem;
 }
 
 .conclusion-img-wrapper {
@@ -800,7 +787,7 @@ h3{
 }
 
 .conclusion-img {
-  width: 300px;                
+  width: 300px;
   height: auto;
   object-fit: contain;
 }

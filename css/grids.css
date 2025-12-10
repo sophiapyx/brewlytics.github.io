@@ -1,25 +1,39 @@
-@media (width <=600px) {
+/* @media (width <=600px) {
    .grid.two-column{
        grid-template-columns: 1fr;
    }
-}
+} */
 
 /* Media Queries */
 
-/* Navigation */
-@media (max-width: 1080px) {
-  .navbar a {
-    font-size: 0.6rem;
-  }
+/* All sections using the same breakpoint merged into one */
+@media (max-width: 900px) {
+   
+
+   .nav-grid {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-around; 
+}
+
+.nav-item {
+  /* padding: 8px; */
+  text-align: center;
+  align-content: center;
+  position: relative;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #050505;
+  font-size: 0.5rem;
+}
+
 
   .nav-grid {
     display: flex;
     grid-template-columns: 1fr;
   }
-}
-
-/* All sections using the same breakpoint merged into one */
-@media (max-width: 900px) {
   /* Intro */
   #intro .intro-layout {
     flex-direction: column-reverse;

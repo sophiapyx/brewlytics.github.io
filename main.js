@@ -2,6 +2,19 @@ const container = document.querySelector(".container");
 const sections = container.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar a");
 
+const items = document.querySelectorAll(".nav-item");
+
+// CLICKING A RECTANGLE SCROLLS TO THE SECTION
+items.forEach(item => {
+  item.addEventListener("click", () => {
+    const target = document.querySelector(item.dataset.target);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+
 container.addEventListener("scroll", () => {
   let currentSection = "";
 
