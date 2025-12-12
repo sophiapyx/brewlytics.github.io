@@ -1,37 +1,35 @@
-html,
-body {
+* {
+    box-sizing: border-box;
+    outline: 1px solid red;
+}
+html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif; */
-  flex: 1;
-  background-color: #F6F1EE
+  background-color: #F6F1EE;
 }
 
 /* Panels */
 
 .container {
-  max-height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .panel {
   scroll-snap-align: start;
-  min-height: 95vh;
+  min-height: 100vh; /* was 95vh */
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-top: 1.5rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  padding-bottom: 1.5rem;
-
+  gap: 1rem;
+  padding: 1.5rem 2.5rem;
 }
 
+
 .panel-inner {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   margin: 0 auto;
   padding: 0 3rem;
 }
@@ -60,15 +58,16 @@ h2 {
 
 }
 
-h3 {
+h3, ul, li {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
     font-size: 1.3rem;
       color: #323233;
+      /* max-width: 50rem; */
 
 }
 
-.caption {
+.caption, p {
   font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -76,19 +75,26 @@ h3 {
   color: #53282A;
 }
 
+.grid.two-column{
+    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* End of Text Styles */
 
 #visualisation-container {
-  max-width: fit-content;
-  max-height: auto;
-    align-items: center;
+  /* width: 100vw; */
+  align-content: center;
+  max-width: 90vw;
+    max-height: 70vh;
 
   margin-left: auto;
   margin-right: auto;
 }
 
 #data-source .panel {
-  height: auto;
+  /* height: auto; */
   min-height: 0;
   /* padding: 3rem 0 5rem; */
   scroll-snap-align: start;
@@ -122,7 +128,7 @@ h3 {
 
 /* Active segment (based on scroll) */
 .nav-item.active a {
-  /* background: #0196e6; */
+  background: #0196e6;
 }
 
 /* Tooltip */
@@ -155,8 +161,6 @@ h3 {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  background: linear-gradient(0deg,rgba(246, 241, 238, 1) 0%, rgba(112, 132, 120, 1) 70%);
-
 }
 
 #home .panel.home-1 {
@@ -176,6 +180,11 @@ h3 {
   justify-content: center;
   align-items: center;
   z-index: 11;
+
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  color: #53282A;
+
 }
 
 /* End of Home Panel Design */
@@ -378,21 +387,17 @@ h3 {
    ========================= */
 
 #bad-news .panel {
-  /* background-color: #81beff; */
-  min-height: 100vh;
+  background-color: #708478;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 4rem;
-background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 100%);
-
 }
 
 .badnews-illustration-wrapper {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  /* width: 100%; */
 }
 
 .badnews-illustration {
@@ -415,24 +420,14 @@ background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 1
   align-items: flex-start;
   justify-content: space-between;
   gap: 2.5rem;
-  max-width: 60vw;
   margin: 0 auto;
-  /* padding: 0 4rem; */
 }
 
-/* .lifespan-text h3,
+.lifespan-text h3,
 .lifespan-text h2 {
-  max-width: 40rem;
+  width: 40rem;
+  padding-right: 3rem;
 }
-
-.lifespan-viz {
-  flex: 0 0 420px;
-}
-
-
-.lifespan-viz #visualisation-container {
-  margin: 0;
-} */
 
 /* =========================
    Page 8 — Overlaps Layout
@@ -444,11 +439,8 @@ background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 1
 }
 
 .overlap-inline {
-  /* width: 100%; */
   display: flex;
   align-items: center;
-  /* max-width: 1200px; */
-  /* margin: 0 auto 1.5rem; */
 }
 
 /* .overlap-icon {
@@ -456,11 +448,6 @@ background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 1
   height: auto;
   object-fit: contain;
 } */
-
-.overlap-inline-text {
-  /* margin: 0; */
-  max-width: 60vw;
-}
 
 /* =========================
    Page 9 — What Does It Mean Layout
@@ -471,6 +458,7 @@ background: linear-gradient(0deg,#F6F1EE 0%, #708478 30%, #708478 70%, #F6F1EE 1
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   /* padding: 0 4rem; */
 }
 

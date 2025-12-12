@@ -176,7 +176,6 @@
                 src="https://public.flourish.studio/visualisation/26755270/thumbnail" width="100%"
                 alt="map visualization" /></noscript>
           </div>
-          <!-- <div class="flourish-embed flourish-map" data-src="visualisation/26266848"></div> -->
         </div>
 
       </div>
@@ -259,7 +258,8 @@
           </h3>
         </div>
 
-        <p class="caption">There's also <i>allegedly</i> some drama with the Piccolo brothers but that is not my story to tell.</p>
+        <p class="caption">There's also <i>allegedly</i> some drama with the Piccolo brothers but that is not my story
+          to tell.</p>
       </div>
     </section>
 
@@ -277,45 +277,49 @@
 
     <section id="average-lifespan">
       <div class="panel">
-        <div class="lifespan-layout">
+        <div class="grid two-column">
+          <div>
+            <div class="lifespan-text">
+              <h3>
+                [Box Plot needs to be fixed] <br>
+                This box plot shows the average lifespan of restaurants by cuisine. From here, we noticed a surprising
+                pattern:
+              </h3>
 
-          <div class="lifespan-text">
-            <h3>
-              [Box Plot needs to be fixed] <br>
-              This box plot shows the average lifespan of restaurants by cuisine. From here, we noticed a surprising
-              pattern:
-            </h3>
+              <h3>
+                Japanese restaurants are everywhere, but they tend to stay open for less time on average, while
+                something
+                like an Italian restaurants, although there are fewer restaurants, actually have longer lifespans.
+              </h3>
 
-            <h3>
-              Japanese restaurants are everywhere, but they tend to stay open for less time on average, while something
-              like an Italian restaurants, although there are fewer restaurants, actually have longer lifespans.
-            </h3>
+              <h3>
+                Even cafés, despite their cultural significance, don’t seem last as long as the Italian establishments
+                too.
+              </h3>
 
-            <h3>
-              Even cafés, despite their cultural significance, don’t seem last as long as the Italian establishments
-              too.
-            </h3>
-
-            <h3>
-              So popularity doesn’t always equal survival?
-            </h3>
+              <h3>
+                So popularity doesn’t always equal survival?
+              </h3>
+            </div>
           </div>
+          <div>
 
-          <div class="lifespan-viz">
-            <div id="visualisation-container">
-              <div id="observablehq-lifespan-f21ef443"></div>
+            <div class="lifespan-viz">
+              <div id="visualisation-container">
+                <div id="observablehq-lifespan-f21ef443"></div>
 
-              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 
-              <script type="module">
-                import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-                import define from "https://api.observablehq.com/d/9a6d5a860169013f@231.js?v=4";
-                new Runtime().module(define, name => {
-                  if (name === "lifespan") {
-                    return new Inspector(document.querySelector("#observablehq-lifespan-f21ef443"));
-                  }
-                });
-              </script>
+                <script type="module">
+                  import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                  import define from "https://api.observablehq.com/d/9a6d5a860169013f@231.js?v=4";
+                  new Runtime().module(define, name => {
+                    if (name === "lifespan") {
+                      return new Inspector(document.querySelector("#observablehq-lifespan-f21ef443"));
+                    }
+                  });
+                </script>
+              </div>
             </div>
           </div>
         </div>
@@ -325,239 +329,243 @@
     <section id="overlaps">
       <div class="panel">
 
-        <div class="overlap-inline">
-          <!-- <img src="img/12.png" alt="Turnover illustration" class="overlap-icon" /> -->
-          <h3 class="overlap-inline-text">
-            Digging deeper, we noticed that several addresses had multiple restaurants open in the same space across
-            different years.
-            This suggests a high level of turnover, restaurants closing, new ones taking over the same units, and the
-            cycle repeating. The neighbourhood constantly reshapes itself, reflecting changing trends, competition, and
-            business pressures.</h3>
+          <div class="overlap-inline">
+
+            <!-- <img src="img/12.png" alt="Turnover illustration" class="overlap-icon" /> -->
+            <h3 class="overlap-inline-text">
+              Digging deeper, we noticed that several addresses had multiple restaurants open in the same space across
+              different years.
+              This suggests a high level of turnover, restaurants closing, new ones taking over the same units, and the
+              cycle repeating. The neighbourhood constantly reshapes itself, reflecting changing trends, competition,
+              and
+              business pressures.</h3>
+          </div>
+          <!-- <div class="flourish-embed flourish-map" data-src="visualisation/26266848"></div> -->
+
+          <div class="visualisation-container">
+            <div class='tableauPlaceholder' id='viz1765436958769' style='position: relative'><noscript><a href='#'><img
+                    alt='Dashboard 1 '
+                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IA&#47;IAT355Slide8&#47;Dashboard1&#47;1_rss.png'
+                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='IAT355Slide8&#47;Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                  value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IA&#47;IAT355Slide8&#47;Dashboard1&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+              </object></div>
+            <script
+              type='text/javascript'> var divElement = document.getElementById('viz1765436958769'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1000px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '627px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement); </script>
+          </div>
         </div>
+  </section>
 
-        <div class="visualisation-container">
-          <div class='tableauPlaceholder' id='viz1765436958769' style='position: relative'><noscript><a href='#'><img
-                  alt='Dashboard 1 '
-                  src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IA&#47;IAT355Slide8&#47;Dashboard1&#47;1_rss.png'
-                  style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-              <param name='embed_code_version' value='3' />
-              <param name='site_root' value='' />
-              <param name='name' value='IAT355Slide8&#47;Dashboard1' />
-              <param name='tabs' value='no' />
-              <param name='toolbar' value='yes' />
-              <param name='static_image'
-                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IA&#47;IAT355Slide8&#47;Dashboard1&#47;1.png' />
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-            </object></div>
-          <script
-            type='text/javascript'> var divElement = document.getElementById('viz1765436958769'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement); </script>
-        </div>
-      </div>
-    </section>
+  <section id="whatdoesitmean">
 
-    <section id="whatdoesitmean">
+    <div class="panel wdim">
+      <h1 class="h1-title">
+        So what does this all mean?
+      </h1>
 
-      <div class="panel">
-        <h1 class="h1-title">
-          So what does this all mean?
-        </h1>
-
-        <h1 class="h1-title">
-          To understand the bigger picture, we need to look at the intersection of
-          culture, economics and shifting consumer behaviour
-        </h1>
-        <!-- <div class="wdim-img-wrapper">
+      <h1 class="h1-title">
+        To understand the bigger picture, we need to look at the intersection of
+        culture, economics and shifting consumer behaviour
+      </h1>
+      <!-- <div class="wdim-img-wrapper">
           <img src="img/13.png" alt="Big picture illustration" class="wdim-img">
         </div> -->
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="growing-asian-population">
-      <div class="panel">
-        <h2>
-          There could be a few reasons as to why there are so many Japanese restaurants:
+  <section id="growing-asian-population">
+    <div class="panel">
+      <h2>
+        There could be a few reasons as to why there are so many Japanese restaurants:
+      </h2>
+
+      <ul class="gap-list">
+        <li>Vancouver has one of the largest Asian populations outside of Asia</li>
+        <li>The fact that the ocean gives us access to fresh fish</li>
+        <li>The fact that Vancouver created the California Roll</li>
+        <li>The large immigrant population also leads to fusion dishes such as sushi taco, sushi pizza, etc.</li>
+      </ul>
+      <div class="gap-inline">
+        <h2 class="gap-inline-text">
+          Cultural demand makes Japanese restaurants open frequently, but that doesn’t always ensure they stay open.
         </h2>
-
-        <ul class="gap-list">
-          <li>Vancouver has one of the largest Asian populations outside of Asia</li>
-          <li>The fact that the ocean gives us access to fresh fish</li>
-          <li>The fact that Vancouver created the California Roll</li>
-          <li>The large immigrant population also leads to fusion dishes such as sushi taco, sushi pizza, etc.</li>
-        </ul>
-        <div class="gap-inline">
-          <h2 class="gap-inline-text">
-            Cultural demand makes Japanese restaurants open frequently, but that doesn’t always ensure they stay open.
-          </h2>
-          <!-- <img src="img/14.png" alt="Cultural demand illustration" class="gap-icon" /> -->
-        </div>
+        <!-- <img src="img/14.png" alt="Cultural demand illustration" class="gap-icon" /> -->
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="economics">
+  <section id="economics">
 
-      <div class="panel economics-panel">
-        <div class="econ-img-wrapper">
-          <img src="img/15.png" alt="Economics illustration" class="econ-img">
-        </div>
+    <div class="panel economics-panel">
+      <div class="econ-img-wrapper">
+        <img src="img/15.png" alt="Economics illustration" class="econ-img">
+      </div>
 
-        <div class="econ-text">
+      <div class="econ-text">
+        <h3>
+          Economics can also be another factor. The fact is, there are so many Japanese restaurants that are evidently
+          saturating the area, creating more competition, potentially leading to shorter lifespans. Meanwhile the
+          stark
+          contrast when it comes to how many Italian restaurants means they face less competition, and are therefore,
+          more
+          likely to survive Oversupply seems to shorten lifespans, while niche, differentiated restaurants tend to
+          last
+          longer. Ultimately being popular doesn’t always guarantee survival!
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="economics-continued">
+    <div class="panel econ2-panel">
+
+      <div class="econ2-top-row">
+        <div class="econ2-text-main">
           <h3>
-            Economics can also be another factor. The fact is, there are so many Japanese restaurants that are evidently
-            saturating the area, creating more competition, potentially leading to shorter lifespans. Meanwhile the
-            stark
-            contrast when it comes to how many Italian restaurants means they face less competition, and are therefore,
-            more
-            likely to survive Oversupply seems to shorten lifespans, while niche, differentiated restaurants tend to
-            last
-            longer. Ultimately being popular doesn’t always guarantee survival!
+            Economic pressures extend far beyond competition. Restaurant rent in Vancouver can range from $3,500 to
+            $15,000 per month, and in some cases, much higher. For example, Cioppino’s Mediterranean Grill in Yaletown
+            closed in 2024 after 25 years when its monthly rent jumped to $60,000.
+            With rising costs in:
           </h3>
         </div>
-      </div>
-    </section>
 
-    <section id="economics-continued">
-      <div class="panel econ2-panel">
-
-        <div class="econ2-top-row">
-          <div class="econ2-text-main">
-            <h3>
-              Economic pressures extend far beyond competition. Restaurant rent in Vancouver can range from $3,500 to
-              $15,000 per month, and in some cases, much higher. For example, Cioppino’s Mediterranean Grill in Yaletown
-              closed in 2024 after 25 years when its monthly rent jumped to $60,000.
-              With rising costs in:
-            </h3>
-          </div>
-
-          <div class="econ2-image">
+        <!-- <div class="econ2-image">
             <img src="img/16.png" alt="Rent pressures illustration" class="econ2-img">
-          </div>
+          </div> -->
+      </div>
+
+      <div class="econ2-bottom">
+        <div class="econ2-list-group">
+          <ul>Rent</ul>
+          <ul>food and ingredients</ul>
+          <ul>Utilities</ul>
+          <ul>labour</ul>
         </div>
 
-        <div class="econ2-bottom">
-          <div class="econ2-list-group">
-            <ul>Rent</ul>
-            <ul>food and ingredients</ul>
-            <ul>Utilities</ul>
-            <ul>labour</ul>
-          </div>
+        <h3 class="econ2-bottom-text">
+          …restaurants face increasingly tight margins.
+          Combined with heavy competition, these pressures can contribute to frequent turnover in such areas.
+        </h3>
+      </div>
+    </div>
+  </section>
 
-          <h3 class="econ2-bottom-text">
-            …restaurants face increasingly tight margins.
-            Combined with heavy competition, these pressures can contribute to frequent turnover in such areas.
+  <section id="consumer-behaviour">
+    <div class="panel cb-panel">
+      <div class="cb-content">
+        <h3>
+          Consumer behaviour has also shifted dramatically. According to Michelin-starred chef J-C Poirier and
+          Chambar co-owner Kerri Green:
+        </h3>
+        <div class="cb-top-row">
+          <!-- <div class="cb-img-wrapper">
+              <img src="img/17.png" alt="Consumer behaviour illustration" class="cb-img">
+            </div> -->
+          <div class="cb-text-main">
+
+            <ul class="cb-list">
+              <li>There’s a shortage of staff, forcing restaurants to reduce hours</li>
+              <li>Downtown foot traffic has dropped: “There’s no one downtown… People aren’t going out after work”
+              </li>
+              <li>Guests now prefer affordable and fast options</li>
+              <li>When people’s personal budgets shrink, dining out is often the first expense people cut</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cb-extra-text">
+          <h3>
+            Social media and Michelin listings, built hype to boost the restaurant’s popularity, but that the novelty
+            has
+            worn off, with Poirier saying “There was excitement at first, but now people care less.” He adds: “In
+            Europe,
+            people embrace that dining experience. Here, people want good food and good value, without being overly
+            challenged.” These shifting habits add yet another layer to the challenges restaurants face today.
           </h3>
         </div>
+
       </div>
-    </section>
 
-    <section id="consumer-behaviour">
-      <div class="panel cb-panel">
-        <div class="cb-content">
-          <div class="cb-top-row">
-            <div class="cb-img-wrapper">
-              <img src="img/17.png" alt="Consumer behaviour illustration" class="cb-img">
-            </div>
-            <div class="cb-text-main">
-              <h3 class="cb-heading">
-                Consumer behaviour has also shifted dramatically. According to Michelin-starred chef J-C Poirier and
-                Chambar co-owner Kerri Green:
-              </h3>
-              <ul class="cb-list">
-                <li>There’s a shortage of staff, forcing restaurants to reduce hours</li>
-                <li>Downtown foot traffic has dropped: “There’s no one downtown… People aren’t going out after work”
-                </li>
-                <li>Guests now prefer affordable and fast options</li>
-                <li>When people’s personal budgets shrink, dining out is often the first expense people cut</li>
-              </ul>
-            </div>
-          </div>
-          <div class="cb-extra-text">
-            <h3>
-              Social media and Michelin listings, built hype to boost the restaurant’s popularity, but that the novelty
-              has
-              worn off, with Poirier saying “There was excitement at first, but now people care less.” He adds: “In
-              Europe,
-              people embrace that dining experience. Here, people want good food and good value, without being overly
-              challenged.” These shifting habits add yet another layer to the challenges restaurants face today.
-            </h3>
-          </div>
+    </div>
+  </section>
 
+  <section id="summing-it-up">
+    <div class="panel siu-panel">
+      <div class="siu-content">
+        <div class="siu-top">
+          <h3>
+            So what does this all mean? The lifespan of restaurants are shaped by three key forces working together:
+          </h3>
+          <ul class="siu-list">
+            <li>Culture influences what types of restaurants open</li>
+            <li>Economics determines which ones can survive</li>
+            <li>Consumer habits have changed and not for the better</li>
+          </ul>
         </div>
-
-      </div>
-    </section>
-
-    <section id="summing-it-up">
-      <div class="panel siu-panel">
-        <div class="siu-content">
-          <div class="siu-top">
+        <div class="siu-bottom-row">
+          <div class="siu-bottom-text">
             <h3>
-              So what does this all mean? The lifespan of restaurants are shaped by three key forces working together:
+              So is it because certain cuisines are more popular than others or social media hypes up a specific new
+              restaurant? Maybe, but also looking at how the three factors interact together in a neighbourhood that
+              is
+              constantly shifting and reinventing itself is crucial to its success.
             </h3>
-            <ul class="siu-list">
-              <li>Culture influences what types of restaurants open</li>
-              <li>Economics determines which ones can survive</li>
-              <li>Consumer habits have changed and not for the better</li>
-            </ul>
           </div>
-          <div class="siu-bottom-row">
-            <div class="siu-bottom-text">
-              <h3>
-                So is it because certain cuisines are more popular than others or social media hypes up a specific new
-                restaurant? Maybe, but also looking at how the three factors interact together in a neighbourhood that
-                is
-                constantly shifting and reinventing itself is crucial to its success.
-              </h3>
-            </div>
-            <div class="siu-image">
+          <!-- <div class="siu-image">
               <img src="img/18.png" alt="Three factors illustration" class="siu-img">
-            </div>
-          </div>
+            </div> -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="conclusion">
-      <div class="panel conclusion-panel">
-        <div class="conclusion-content">
-          <div class="conclusion-top">
-            <h3>
-              Restaurants open, close, and reopen under new names, not because the neighbourhood is failing,
-              but because it is dynamic, competitive, and continually evolving.
-            </h3>
+  <section id="conclusion">
+    <div class="panel conclusion-panel">
+      <div class="conclusion-content">
+        <div class="conclusion-top">
+          <h3>
+            Restaurants open, close, and reopen under new names, not because the neighbourhood is failing,
+            but because it is dynamic, competitive, and continually evolving.
+          </h3>
 
-            <ul class="conclusion-list">
-              <li>Popular cuisines appear quickly but also churn quickly</li>
-              <li>Less saturated categories are more likely to remain open</li>
-              <li>The neighbourhood’s design naturally encourages experimentation and renewal</li>
-            </ul>
-          </div>
+          <ul class="conclusion-list">
+            <li>Popular cuisines appear quickly but also churn quickly</li>
+            <li>Less saturated categories are more likely to remain open</li>
+            <li>The neighbourhood’s design naturally encourages experimentation and renewal</li>
+          </ul>
+        </div>
 
-          <div class="conclusion-bottom-row">
-            <div class="conclusion-img-wrapper">
+        <div class="conclusion-bottom-row">
+          <!-- <div class="conclusion-img-wrapper">
               <img src="img/19.png" alt="Conclusion illustration" class="conclusion-img">
-            </div>
+            </div> -->
 
-            <div class="conclusion-text">
-              <h3>
-                In many ways, our data reflects Vancouver’s food culture as a whole: diverse, fast-moving,
-                culturally driven, economically pressured, and always hungry for something new.
-              </h3>
-            </div>
-
+          <div class="conclusion-text">
+            <h3>
+              In many ways, our data reflects Vancouver’s food culture as a whole: diverse, fast-moving,
+              culturally driven, economically pressured, and always hungry for something new.
+            </h3>
           </div>
 
         </div>
 
       </div>
-    </section>
 
-    <!-- <section>
+    </div>
+  </section>
+
+  <!-- <section>
       <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/26432538">
         <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
             src="https://public.flourish.studio/visualisation/26432538/thumbnail" width="100%"
@@ -565,22 +573,22 @@
       </div>
     </section> -->
 
-    <section id="sources">
-      <div class="panel">
-        <div class="panel-inner">
-          <p>
-            Data source:
-            <a href="https://opendata.vancouver.ca/explore/dataset/business-licences-2013-to-2024/information/?disjunctive.status"
-              target="_blank" rel="noopener noreferrer">
-              City of Vancouver Open Data Portal — Business Licences 2013–2024
-            </a>
-          </p>
-          <p>
-            Project team: Brewlytics · Course: IAT 355 — Visual Analytics
-          </p>
-        </div>
+  <section id="sources">
+    <div class="panel">
+      <div class="panel-inner">
+        <p>
+          Data source:
+          <a href="https://opendata.vancouver.ca/explore/dataset/business-licences-2013-to-2024/information/?disjunctive.status"
+            target="_blank" rel="noopener noreferrer">
+            City of Vancouver Open Data Portal — Business Licences 2013–2024
+          </a>
+        </p>
+        <p>
+          Project team: Brewlytics · Course: IAT 355 — Visual Analytics
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
   </div>
 
   <div class="navbar">

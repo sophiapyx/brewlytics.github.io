@@ -1,11 +1,9 @@
 const container = document.querySelector(".container");
 const sections = container.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
-
-const items = document.querySelectorAll(".nav-item");
+const navItems = document.querySelectorAll(".nav-item");
 
 // CLICKING A RECTANGLE SCROLLS TO THE SECTION
-items.forEach(item => {
+navItems.forEach(item => {
   item.addEventListener("click", () => {
     const target = document.querySelector(item.dataset.target);
     if (target) {
@@ -14,26 +12,24 @@ items.forEach(item => {
   });
 });
 
-
+// SCROLL DETECTION TO HIGHLIGHT ACTIVE RECTANGLE
 container.addEventListener("scroll", () => {
   let currentSection = "";
 
   sections.forEach(section => {
-    const offset = section.offsetTop;
+    const offsetTop = section.offsetTop;
     const height = section.offsetHeight;
 
-    if (container.scrollTop >= offset - height / 2) {
+    if (container.scrollTop >= offsetTop - height / 2) {
       currentSection = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${currentSection}`) {
-      link.classList.add("active");
-    }
+  navItems.forEach(item => {
+    item.classList.toggle("active", item.dataset.target === `#${currentSection}`);
   });
 });
+
 
 // Source - https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
 // Posted by Joseph Silber, modified by community. See post 'Timeline' for change history
