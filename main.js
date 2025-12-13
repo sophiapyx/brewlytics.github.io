@@ -13,23 +13,25 @@ navItems.forEach(item => {
 });
 
 // SCROLL DETECTION TO HIGHLIGHT ACTIVE RECTANGLE
-container.addEventListener("scroll", () => {
-  let currentSection = "";
+const observerOptions = {
+  root: container,
+  threshold: 0.5
+};
 
-  sections.forEach(section => {
-    const offsetTop = section.offsetTop;
-    const height = section.offsetHeight;
-
-    if (container.scrollTop >= offsetTop - height / 2) {
-      currentSection = section.getAttribute("id");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute("id");
+      navItems.forEach(item => {
+        item.classList.toggle("active", item.dataset.target === `#${id}`);
+      });
     }
   });
+}, observerOptions);
 
-  navItems.forEach(item => {
-    item.classList.toggle("active", item.dataset.target === `#${currentSection}`);
-  });
+sections.forEach(section => {
+  observer.observe(section);
 });
-
 
 // Source - https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
 // Posted by Joseph Silber, modified by community. See post 'Timeline' for change history
