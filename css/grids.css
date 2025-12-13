@@ -1,242 +1,66 @@
-/* @media (width <=600px) {
-   .grid.two-column{
-       grid-template-columns: 1fr;
-   }
-} */
-
 /* Media Queries */
 
-/* All sections using the same breakpoint merged into one */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-       .grid.two-column{
-        grid-template-columns: 1fr;
+    .panel {
+        padding: 4rem 1.5rem 6rem 1.5rem; /* Extra padding for bottom nav */
+        min-height: auto; /* Let content determine height on mobile */
+        justify-content: flex-start;
+        height: auto; /* Ensure height is auto */
+    }
+    
+    /* STACKING LOGIC: This fixes the layout on mobile */
+    .grid-2-col {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
-   .nav-grid {
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-around; 
-}
+    /* Stack legacy flex layouts */
+    .intro-layout, 
+    .currently-open-layout,
+    .cuisine-row-2, 
+    .cafes-inline, 
+    .lifespan-layout, 
+    .gap-inline,
+    .econ2-top-row,
+    .cb-top-row,
+    .siu-bottom-row,
+    .conclusion-bottom-row {
+        flex-direction: column !important;
+        align-items: flex-start;
+    }
+    
+    .intro-layout {
+        flex-direction: column-reverse !important;
+    }
 
-.nav-item {
-  /* padding: 8px; */
-  text-align: center;
-  align-content: center;
-  position: relative;
-}
+    /* Mobile Navigation: 4 rows of 4 columns */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
 
-.nav-item a {
-  text-decoration: none;
-  color: #050505;
-  font-size: 0.5rem;
-}
+    .nav-item {
+      height: 6px; 
+    }
+    
+    /* Typography sizing for mobile */
+    .h1-title {
+        font-size: 2.5rem;
+    }
+    
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.2rem; }
 
-
-  .nav-grid {
-    display: flex;
-    grid-template-columns: 1fr;
-  }
-  /* Intro */
-  #intro .intro-layout {
-    flex-direction: column-reverse;
-    text-align: left;
-    padding: 0 1.5rem;
-  }
-
-  #intro .intro-illustration {
-    flex: 0 0 auto;
-  }
-
-  /* Currently Open */
-  #currently-open .currently-open-layout {
-    flex-direction: column;
-    text-align: left;
-  }
-
-  #currently-open .currently-open-illustration {
-    flex: 0 0 auto;
-  }
-
-  /* Cuisine Breakdown */
-  .cuisine-inline,
-  .cuisine-row-2 {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 1.5rem;
-  }
-
-  .cuisine-images-inline {
-    flex-wrap: wrap;
-  }
-
-  .cuisine-small-img {
-    width: 70px;
-  }
-
-  .cuisine-image-right img {
-    width: 200px;
-  }
-
-  /* Cafes */
-  .cafes-inline {
-    flex-direction: column;
-    padding: 0 1.5rem;
-  }
-
-  .cafes-icon-small,
-  .cafes-icon-large {
-    width: 70px;
-  }
-
-  /* Bad News */
-  #bad-news .panel {
-    padding: 0 2rem;
-  }
-
-  .badnews-illustration {
-    width: 240px;
-  }
-
-  /* Average Lifespan */
-  .lifespan-layout {
-    flex-direction: column-reverse;
-    padding: 0 1.5rem;
-  }
-
-  .lifespan-viz {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-
-  /* Overlaps */
-  .overlap-inline {
-    flex-direction: column;
-    padding: 0 1.5rem;
-  }
-
-  #overlaps .panel {
-    padding: 0 1.5rem;
-  }
-
-  /* What does it mean */
-  #whatdoesitmean .panel {
-    padding: 0 1.5rem;
-  }
-
-  .wdim-img {
-    width: 260px;
-  }
-
-  /* Asian Population */
-  #growing-asian-population .panel {
-    padding: 2rem 1.5rem 0;
-  }
-
-  .gap-inline {
-    flex-direction: column;
-  }
-
-  .gap-icon {
-    width: 110px;
-  }
-
-  /* Economics */
-  #economics .economics-panel {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: auto;
-    padding: 2rem 1.5rem;
-  }
-
-  .econ-img-wrapper {
-    margin-right: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .econ-img {
-    width: 140px;
-  }
-
-  .econ-text {
-    max-width: 100%;
-  }
-
-  /* Economics Continued */
-  .econ2-panel {
-    height: auto;
-    padding: 2rem 1.5rem;
-    justify-content: flex-start;
-  }
-
-  .econ2-top-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .econ2-img {
-    width: 150px;
-  }
-
-  .econ2-text-main h3,
-  .econ2-bottom-text {
-    max-width: 100%;
-  }
-
-  /* Consumer Behaviour */
-  .cb-panel {
-    height: auto;
-    padding: 2rem 1.5rem;
-    align-items: flex-start;
-  }
-
-  .cb-top-row {
-    flex-direction: column;
-  }
-
-  .cb-img {
-    width: 150px;
-  }
-
-  .cb-text-main,
-  .cb-extra-text h3 {
-    max-width: 100%;
-  }
-
-  /* Sum it Up */
-  .siu-panel {
-    height: auto;
-    padding: 2rem 1.5rem;
-    align-items: flex-start;
-  }
-
-  .siu-bottom-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .siu-img {
-    width: 140px;
-  }
-
-  .siu-top h3,
-  .siu-bottom-text h3 {
-    max-width: 100%;
-  }
-
-  /* Conclusion */
-  .conclusion-panel {
-    height: auto;
-    padding: 2rem 1.5rem;
-  }
-
-  .conclusion-bottom-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .conclusion-img {
-    width: 150px;
-  }
+    /* Embed sizing */
+    .visualisation-container svg {
+        height: auto;
+        width: 100%;
+    }
+    
+    .tableauPlaceholder {
+        height: 500px !important;
+    }
 }
