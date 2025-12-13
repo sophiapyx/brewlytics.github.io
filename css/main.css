@@ -1,19 +1,30 @@
 * {
     box-sizing: border-box;
 }
+
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* Hide scrollbar for the container snap effect */
   background-color: #F6F1EE;
+  color: #323233;
+}
+
+/* --- VARIABLES --- */
+:root {
+    --bg-color: #F6F1EE;
+    --text-main: #323233;
+    --accent-teal: #708478; /* Your original teal */
+    --accent-dark: #31423c; 
+    --text-red: #53282A;
 }
 
 /* Panels */
-
 .container {
     max-height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .panel {
@@ -22,676 +33,194 @@ html, body {
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  /* Fixed responsiveness issue: switched from fixed rem to % */
+  gap: 2rem; 
+  /* Responsive Padding: 5% side padding ensures it looks good on all screens */
   padding: 1.5rem 5%; 
   justify-content: center;
+  position: relative;
 }
-
 
 .panel-inner {
   margin: 0 auto;
   padding: 0 3rem;
 }
 
-.panel-inner p {
-  max-width: 800px;
-}
+/* --- TYPOGRAPHY (The "Apple" Feel) --- */
 
-/* End of Panel Work */
-
-/* Text Styles */
+/* Massive Titles */
 .h1-title {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 3rem;
+  /* Clamp allows huge text on desktop that scales down automatically on mobile */
+  font-size: clamp(2.5rem, 6vw, 5rem); 
+  font-weight: 800;
   text-align: center;
-  /* Fixed responsiveness issue: width was too small on mobile */
   width: 100%;
   max-width: 1200px;
   padding-top: 0;
   color: #ffffff;
   margin: 0 auto;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #323233;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); 
+  color: var(--accent-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
-h3, ul, li {
+h3 {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: #323233;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--text-main);
   line-height: 1.5;
+  max-width: 65ch; /* Optimal reading length */
+}
+
+/* List Styling */
+ul, li {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Highlight Class for Emphasis (Teal Text) */
+.highlight {
+    color: var(--accent-teal);
+    font-weight: 700;
 }
 
 .caption, p {
   font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   max-width: 80vw;
-  color: #53282A;
+  color: var(--text-red);
+  margin-top: 0.5rem;
 }
 
-.grid.two-column{
+/* Dark Panel Overrides */
+.dark-panel h2, .dark-panel h3 {
+    color: #ffffff;
+}
+
+/* --- LAYOUTS --- */
+
+/* The 2-Column Grid: This fixes the "ugly" slides */
+.grid-2-col {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    display: grid; /* Switched to grid for better control */
-    gap: 2rem;
+    gap: 4rem; /* Big gap for breathing room */
     align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* End of Text Styles */
-
+/* Visualizations */
 #visualisation-container, .visualisation-container {
   align-content: center;
   width: 100%;
-  max-width: 1200px; /* Increased to make embeds bigger */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1200px; 
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
 }
 
-/* Make sure iframes and objects fill the container */
+/* Force embeds to fill their container */
 .flourish-embed, .tableauPlaceholder {
     width: 100% !important;
 }
 
-#data-source .panel {
-  min-height: 0;
-  scroll-snap-align: start;
-}
-
-/* Navigation */
-
+/* --- NAVIGATION --- */
 .navbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 5px;
-  z-index: 10;
-  background-color: rgba(246, 241, 238, 0.9); /* Added transparency */
+  padding: 8px;
+  z-index: 100;
+  background-color: rgba(246, 241, 238, 0.95); /* Slight transparency */
+  backdrop-filter: blur(8px); /* Blur effect behind nav */
 }
 
 .nav-grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  gap: 5px;
+  gap: 6px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .nav-item {
-  height: 1rem;
-  background: #31423c;
-  border-radius: 0.3rem;
+  height: 10px; /* Slimmer bars */
+  background: #BDC3C7; 
+  border-radius: 4px;
   cursor: pointer;
   position: relative;
-  font-family: "Nunito Sans", sans-serif;
+  transition: all 0.3s ease;
 }
 
-/* Active segment (based on scroll) */
 .nav-item.active {
-  background: #0196e6;
-}
-
-/* Tooltip */
-.nav-item::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #323233;
-  color: #F6F1EE;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
+  background: var(--accent-dark);
+  transform: scaleY(1.3);
 }
 
 .nav-item:hover::after {
-  opacity: 1;
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-main);
+  color: #FFF;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
-/* Home Panel Design */
+/* --- SECTION BACKGROUNDS --- */
 #home {
-  height: 100vh;
-  background-color: #708478;
+  background-color: var(--accent-teal);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
 }
 
 #home .panel.home-1 {
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 6vw;
   background: none;
+  align-items: center;
 }
 
 .scroll-down {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   position: absolute;
   bottom: 10%;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  z-index: 11;
-
   font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
-  color: #53282A;
-
-}
-
-/* End of Home Panel Design */
-
-.section-text-card {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.caption {
-  background: transparent !important;
-}
-
-.page-illustration,
-.left-illustration {
-  max-width: 500px;
-  height: auto;
-}
-
-
-/* =========================
-   Page 2 (#intro) Layout
-   ========================= */
-
-#intro .panel {
-  align-items: center; /* Centered */
-  background-color: #708478;
-}
-
-#intro .intro-layout {
-  display: flex;
-  gap: 3rem;
-  margin: 0 auto;
-}
-
-.intro-big-text {
-  max-width: 1000px;
-  text-align: center;
-}
-
-.intro-big-text h2 {
-    color: white;
-}
-
-.intro-text {
-  max-width: 1000px;
-  text-align: right;
-  margin-top: 2rem;
-}
-
-.intro-text h2 {
-    color: white;
-}
-
-/* =========================
-   Page 3 (#currently-open)
-   ========================= */
-
-#currently-open .currently-open-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 ;
-}
-
-#currently-open .currently-open-text {
-    width: 100%;
-}
-
-
-#currently-open .section-text-card {
-  padding-left: 10rem;
-  padding-right: 10rem;
-  box-sizing: border-box;
-}
-
-/* Map CSS  */
-#currently-open .flourish-embed.flourish-map {
-  width: 100%;
-  margin: 1rem auto;
-  margin-top: 0%;
-  display: block;
-}
-
-#currently-open .flourish-embed.flourish-map iframe {
-  border: 0;
-}
-
-/* =========================
-   Page 4 — Cuisine Layout
-   ========================= */
-
-#cuisine .panel {
-}
-
-.cuisine-inline {
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.cuisine-inline-text {
-  margin: 0;
-}
-
-.cuisine-row-2 {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  text-align: end;
-  max-width: 800px;
-}
-
-
-/* =========================
-   Page 5 — Cafes Updated Layout
-   ========================= */
-
-.cafes-inline {
-  display: flex;
-  align-items: flex-start;
-}
-
-.cafes-icon-small {
-  width: 55px;
-  height: auto;
-  object-fit: contain;
-}
-
-.cafes-icon-large {
-  width: 300px;
-  height: auto;
-  object-fit: contain;
-}
-
-.cafes-inline-text {
-  margin: 0;
-  max-width: 42rem;
-}
-
-/* =========================
-   Page 6 — Bad News Layout
-   ========================= */
-
-#bad-news .panel {
-  background-color: #708478;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 4rem;
-}
-
-.badnews-illustration-wrapper {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.badnews-illustration {
-  width: 650px;
-  max-width: 80%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* =========================
-   Page 7 — Average Lifespan Layout
-   ========================= */
-
-#average-lifespan .panel {
-  align-items: stretch;
-}
-
-.lifespan-layout {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2.5rem;
-  margin: 0 auto;
-}
-
-/* =========================
-   Page 8 — Overlaps Layout
-   ========================= */
-
-#overlaps .panel {
-}
-
-.overlap-inline {
-  display: flex;
-  align-items: center;
-}
-
-
-/* =========================
-   Page 9 — What Does It Mean Layout
-   ========================= */
-
-#whatdoesitmean .panel {
-  background-color: #708478;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-
-/* =========================
-   Page 10 — Growing Asian Population (Final)
-   ========================= */
-
-#growing-asian-population .panel {
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 4rem 0;
-}
-
-.gap-block {
-  max-width: 55rem;
-  text-align: center;
-  margin-bottom: 1.2rem;
-}
-
-.gap-heading {
-  margin-bottom: 0.8rem;
-  white-space: nowrap;
-}
-
-.gap-list {
-  list-style: disc;
-  padding-left: 1.5rem;
-  text-align: left;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.gap-inline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  max-width: 60rem;
-  margin-top: 0.3rem;
-}
-
-.gap-inline-text {
-  margin: 0;
-  max-width: 46rem;
-  text-align: center;
-}
-
-.gap-icon {
-  width: 300px;
-  height: auto;
-}
-
-/* =========================
-   Page 11 — Economics Layout (Final)
-   ========================= */
-
-#economics .economics-panel {
-  flex-direction: row;
-  align-items: center;
-  padding: 0 6rem;
-  box-sizing: border-box;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-
-.econ-img-wrapper {
-  flex: 0 0 auto;
-  margin-right: 2.5rem;
-}
-
-.econ-img {
-  width: 400px;
-  height: auto;
-  object-fit: contain;
-}
-
-.econ-text {
-  flex: 1;
-  max-width: 46rem;
-  text-align: left;
-}
-
-.econ-text h3 {
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* =========================
-   Page 12 — Economics Continued Layout
-   ========================= */
-
-.econ2-panel {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 6rem;
-  box-sizing: border-box;
-}
-
-.econ2-top-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto 1.5rem;
-}
-
-.econ2-text-main h3 {
-  margin: 0;
-  max-width: 42rem;
-  line-height: 1.5;
-}
-
-.econ2-image {
-  flex: 0 0 auto;
-}
-
-.econ2-img {
-  width: 200px;
-  height: auto;
-  object-fit: contain;
-}
-
-.econ2-bottom {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.econ2-list-group {
-  margin-bottom: 0.8rem;
-}
-
-.econ2-list-group ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.econ2-bottom-text {
-  margin: 0;
-  max-width: 42rem;
-  line-height: 1.5;
-}
-
-/* =========================
-   Page 13 — Consumer Behaviour Layout
-   ========================= */
-
-.cb-panel {
-  align-items: center;
-  justify-content: center;
-  padding: 0 6rem;
-  box-sizing: border-box;
-}
-
-.cb-content {
-  max-width: 1100px;
-  width: 100%;
-}
-
-.cb-top-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-bottom: 1.8rem;
-}
-
-.cb-img-wrapper {
-  flex: 0 0 auto;
-}
-
-.cb-img {
-  width: 180px;
-  height: auto;
-  object-fit: contain;
-}
-
-.cb-text-main {
-  flex: 1;
-  max-width: 48rem;
-}
-
-.cb-heading {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-}
-
-.cb-list {
-  margin: 0;
-  padding-left: 1.3rem;
-}
-
-.cb-extra-text h3 {
-  margin: 0;
-  max-width: 52rem;
-  line-height: 1.5;
-}
-
-/* =========================
-   Page 14 — Summing It Up Layout
-   ========================= */
-
-.siu-panel {
-  align-items: center;
-  justify-content: center;
-  padding: 0 10rem;
-  box-sizing: border-box;
-}
-
-.siu-content {
-  max-width: 1100px;
-  width: 100%;
-}
-
-.siu-top h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  max-width: 50rem;
-}
-
-.siu-list {
-  margin: 0 0 1.8rem 0;
-  padding-left: 1.3rem;
-}
-
-.siu-bottom-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.5rem;
-}
-
-.siu-bottom-text h3 {
-  margin: 0;
-  max-width: 46rem;
-  line-height: 1.5;
-}
-
-.siu-image {
-  flex: 0 0 auto;
-}
-
-.siu-img {
-  width: 300px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* =========================
-   Page 15 — Conclusion Layout
-   ========================= */
-
-.conclusion-panel {
-  align-items: center;
-  justify-content: center;
-  padding: 0 10rem;
-  box-sizing: border-box;
-}
-
-.conclusion-content {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.conclusion-top h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.6rem;
-  text-align: left;
-}
-
-.conclusion-list {
-  margin: 0;
-  padding-left: 1.4rem;
-  max-width: 48rem;
-}
-
-.conclusion-bottom-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 1rem;
+  color: var(--text-red);
+  animation: bounce 2s infinite;
 }
 
-.conclusion-img-wrapper {
-  flex: 0 0 auto;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
 }
 
-.conclusion-img {
-  width: 300px;
-  height: auto;
-  object-fit: contain;
+#intro .panel, #bad-news .panel, #whatdoesitmean .panel {
+  background-color: var(--accent-teal);
 }
 
-.conclusion-text h3 {
-  margin: 0;
-  max-width: 48rem;
-  line-height: 1.5;
-  text-align: left;
+/* Images */
+.page-illustration, .econ-img, .conclusion-img {
+    max-width: 100%;
+    height: auto;
 }
