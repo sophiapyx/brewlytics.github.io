@@ -2,68 +2,13 @@
     box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #F6F1EE;
-  --text-primary: #323233;
-  --text-secondary: #53282A;
-  --accent-color: #708478;
-  --panel-padding-mobile: 2rem 1.5rem;
-  --panel-padding-desktop: 2rem 4rem;
-}
-
 html, body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
+  background-color: #F6F1EE;
   font-family: "Nunito Sans", sans-serif;
-  color: var(--text-primary);
-}
-
-img, video, iframe, svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Text Styles */
-
-h1, h2, h3, h4, p, ul, li {
-  margin: 0 0 1rem 0;
-}
-
-.h1-title {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  text-align: center;
-  max-width: 115vh;
-  padding-top: 0;
-  color: #ffffff;
-  line-height: 1.2;
-}
-
-h2 {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: #323233;
 }
-
-h3, ul, li {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 500;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  color: #323233;
-  line-height: 1.6;
-}
-
-.caption, p {
-  font-family: "IBM Plex Mono", monospace;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: #53282A;
-}
-
-/* End of Text Styles */
 
 /* Panels */
 
@@ -78,21 +23,12 @@ h3, ul, li {
   scroll-snap-align: start;
   min-height: 100vh;
   width: 100%;
-  padding: var(--panel-padding-desktop);
+  padding: 2rem 4rem; /* Desktop padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.content-wrapper {
-  width: 100%;
-  max-width: 1200px; 
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
 }
 
 .panel-inner {
@@ -106,66 +42,120 @@ h3, ul, li {
 
 /* End of Panel Work */
 
-.grid-2-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  width: 100%;
-  align-items: center;
+/* Text Styles */
+.h1-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 115vh;
+  padding-top: 0;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
-#visualisation-container, .visualisation-container {
+h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #323233;
+  margin-bottom: 1rem;
+}
+
+h3, ul, li {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #323233;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.caption, p {
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #53282A;
+}
+
+/* Wrapper to constrain text width but let charts go wide */
+.content-wrapper {
   width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Text containers within the wrapper */
+.text-block {
+    max-width: 800px;
+    width: 100%;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    width: 100%;
+    align-items: center;
+}
+
+/* End of Text Styles */
+
+/* Visualizations - Now Bigger */
+.visualisation-container {
+  width: 100%;
+  max-width: 1200px; /* Allow maps to be wide */
+  align-content: center;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
-  max-width: 90vw;
 }
 
-.flourish-embed {
-  width: 100%;
+/* Fix for Tableau and Flourish sizing */
+.tableauPlaceholder, .flourish-embed {
+    width: 100% !important;
 }
 
-/* Navigation */
+/* Navigation - Restored Original Look */
 
 .navbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 10px;
+  padding: 2px;
   z-index: 10;
-  background: rgba(246, 241, 238, 0.95);
+  background: rgba(246, 241, 238, 0.9);
 }
 
 .nav-grid {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 5px;
+  width: 100%;
 }
 
 .nav-item {
-  width: 1.5rem;
-  height: 1.5rem;
+  height: 1rem;
   background: #31423c;
-  border-radius: 50%;
+  border-radius: 0.3rem;
   cursor: pointer;
   position: relative;
   font-family: "Nunito Sans", sans-serif;
-  transition: all 0.3s ease;
+  transition: background 0.3s;
 }
 
 /* Active segment (based on scroll) */
 .nav-item.active {
   background: #0196e6;
-  transform: scale(1.2);
 }
 
 /* Tooltip */
 .nav-item::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   background: #323233;
@@ -185,6 +175,7 @@ h3, ul, li {
 
 /* Home Panel Design */
 #home {
+  height: 100vh;
   background-color: #708478;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -210,6 +201,13 @@ h3, ul, li {
 
 /* End of Home Panel Design */
 
+.page-illustration,
+.left-illustration {
+  max-width: 500px;
+  height: auto;
+}
+
+/* Colored Background Sections */
 #intro .panel, #bad-news .panel, #whatdoesitmean .panel {
-  background-color: #708478; 
+    background-color: #708478; /* Matching the accent color */
 }

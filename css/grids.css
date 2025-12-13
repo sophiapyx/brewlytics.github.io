@@ -1,102 +1,74 @@
 /* Media Queries */
 
-@media (max-width: 900px) {
-  
-  :root {
-    --panel-padding-desktop: 4rem 1.5rem 6rem 1.5rem;
-  }
+@media (max-width: 1000px) {
 
-  .panel {
-    min-height: auto;
-    justify-content: flex-start;
-  }
+    /* Adjust padding for smaller screens */
+   .panel {
+       padding: 2rem 1.5rem 4rem 1.5rem; /* Extra bottom padding for navbar */
+       height: auto;
+       min-height: auto; /* Allow content to dictate height on mobile */
+       justify-content: flex-start;
+   }
 
-  .grid-2-col {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+    /* Stack the grid columns */
+   .grid-2-col{
+       grid-template-columns: 1fr;
+       gap: 2rem;
+   }
 
-  h1, h2, h3, p {
-    text-align: left !important;
-    max-width: 100% !important;
-  }
+   /* Make text fill width on mobile */
+   .text-block {
+       max-width: 100%;
+   }
+   
+   /* Fix Typography sizing */
+   .h1-title {
+       font-size: 2rem;
+   }
+   
+   h2 {
+       font-size: 1.3rem;
+   }
+   
+   h3 {
+       font-size: 1.1rem;
+   }
 
-  .h1-title {
-    text-align: center !important;
-  }
+   /* NAV BAR MOBILE FIX */
+   /* We keep the grid look, but allow scrolling so buttons aren't too thin */
+   .navbar {
+       overflow-x: auto;
+       padding: 5px;
+   }
 
-  /* Navigation */
-  .navbar {
-    padding: 5px;
-  }
-  
-  .nav-grid {
-    gap: 15px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 0 10px;
-  }
-  
-  .nav-item {
-    min-width: 1rem;
-    height: 1rem;
-  }
+   .nav-grid {
+       display: flex; /* Switch to flex to allow scrolling row */
+       min-width: 600px; /* Force it to be wide enough to look good */
+       gap: 5px;
+   }
 
-  .visualisation-container svg {
-    height: auto;
-    width: 100%;
-  }
-  
-  .tableauPlaceholder {
-    width: 100% !important;
-    height: 500px !important;
-  }
+   .nav-item {
+       flex: 1; /* Distribute space evenly */
+   }
 
-  /* Intro */
-  .intro-layout {
-    flex-direction: column-reverse;
-  }
-  
-  /* Currently Open */
-  .currently-open-layout {
-    flex-direction: column;
-  }
+   /* Embed Fixes */
+   .visualisation-container {
+       max-width: 100%;
+   }
 
-  /* Cuisine Breakdown */
-  .cuisine-inline,
-  .cuisine-row-2 {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+   .tableauPlaceholder {
+        height: 500px !important; /* Force height on mobile */
+   }
 
-  /* Cafes */
-  .cafes-inline {
-    flex-direction: column;
-  }
-
-  /* Average Lifespan */
-  .lifespan-layout {
-    flex-direction: column-reverse;
-  }
-
-  /* Overlaps */
-  .overlap-inline {
-    flex-direction: column;
-  }
-
-  /* Asian Population */
-  .gap-inline {
-    flex-direction: column;
-  }
-
-  /* Economics */
-  #economics .economics-panel, .econ2-panel, .cb-panel, .siu-panel, .conclusion-panel {
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    height: auto;
-  }
-  
-  .econ-top-row, .cb-top-row, .siu-bottom-row, .conclusion-bottom-row {
-     flex-direction: column;
-  }
+   /* Specific Layout Adjustments */
+   .intro-layout, .lifespan-layout, .gap-inline, .econ-panel, .cb-top-row, .conclusion-bottom-row {
+       flex-direction: column;
+   }
+   
+   /* Images */
+   .page-illustration, .econ-img, .cb-img, .conclusion-img {
+       width: 100%;
+       max-width: 300px;
+       margin: 0 auto;
+   }
 }
