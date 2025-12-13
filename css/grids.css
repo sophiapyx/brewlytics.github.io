@@ -10,7 +10,8 @@
     
     /* STACKING LOGIC: This fixes the layout on mobile */
     .grid-2-col {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
     }
 
@@ -35,6 +36,7 @@
 
     /* Mobile Navigation: 4 rows of 4 columns */
     .nav-grid {
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
     }
