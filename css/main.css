@@ -5,7 +5,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Hide scrollbar for the container snap effect */
+  overflow: hidden; /* Hide main scrollbar for snap effect */
   background-color: #F6F1EE;
   color: #323233;
 }
@@ -14,7 +14,7 @@ html, body {
 :root {
     --bg-color: #F6F1EE;
     --text-main: #323233;
-    --accent-teal: #708478; /* Your original teal */
+    --accent-teal: #708478; /* Original teal */
     --accent-dark: #31423c; 
     --text-red: #53282A;
 }
@@ -34,7 +34,6 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 2rem; 
-  /* Responsive Padding: 5% side padding ensures it looks good on all screens */
   padding: 1.5rem 5%; 
   justify-content: center;
   position: relative;
@@ -45,12 +44,11 @@ html, body {
   padding: 0 3rem;
 }
 
-/* --- TYPOGRAPHY (The "Apple" Feel) --- */
+/* --- TYPOGRAPHY --- */
 
 /* Massive Titles */
 .h1-title {
   font-family: "Nunito Sans", sans-serif;
-  /* Clamp allows huge text on desktop that scales down automatically on mobile */
   font-size: clamp(2.5rem, 6vw, 5rem); 
   font-weight: 800;
   text-align: center;
@@ -78,7 +76,7 @@ h3 {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   color: var(--text-main);
   line-height: 1.5;
-  max-width: 65ch; /* Optimal reading length */
+  max-width: 65ch;
 }
 
 /* List Styling */
@@ -89,7 +87,6 @@ ul, li {
   line-height: 1.6;
 }
 
-/* Highlight Class for Emphasis (Teal Text) */
 .highlight {
     color: var(--accent-teal);
     font-weight: 700;
@@ -104,18 +101,15 @@ ul, li {
   margin-top: 0.5rem;
 }
 
-/* Dark Panel Overrides */
 .dark-panel h2, .dark-panel h3 {
     color: #ffffff;
 }
 
 /* --- LAYOUTS --- */
-
-/* The 2-Column Grid: This fixes the "ugly" slides */
 .grid-2-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem; /* Big gap for breathing room */
+    gap: 4rem; 
     align-items: center;
     width: 100%;
     max-width: 1400px;
@@ -132,7 +126,6 @@ ul, li {
   justify-content: center;
 }
 
-/* Force embeds to fill their container */
 .flourish-embed, .tableauPlaceholder {
     width: 100% !important;
 }
@@ -144,8 +137,8 @@ ul, li {
   width: 100%;
   padding: 8px;
   z-index: 100;
-  background-color: rgba(246, 241, 238, 0.95); /* Slight transparency */
-  backdrop-filter: blur(8px); /* Blur effect behind nav */
+  background-color: rgba(246, 241, 238, 0.95);
+  backdrop-filter: blur(8px);
 }
 
 .nav-grid {
@@ -157,7 +150,7 @@ ul, li {
 }
 
 .nav-item {
-  height: 10px; /* Slimmer bars */
+  height: 10px;
   background: #BDC3C7; 
   border-radius: 4px;
   cursor: pointer;
