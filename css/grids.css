@@ -6,6 +6,7 @@
         padding: 4rem 1.5rem 6rem 1.5rem; /* Extra padding for bottom nav */
         min-height: auto; /* Let content determine height on mobile */
         justify-content: flex-start;
+        height: auto; /* Ensure height is auto */
     }
     
     /* STACKING LOGIC: This fixes the layout on mobile */
