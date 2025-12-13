@@ -1,74 +1,252 @@
+/* @media (width <=600px) {
+   .grid.two-column{
+       grid-template-columns: 1fr;
+   }
+} */
+
 /* Media Queries */
 
+/* All sections using the same breakpoint merged into one */
 @media (max-width: 1000px) {
 
-    /* Adjust padding for smaller screens */
-   .panel {
-       padding: 2rem 1.5rem 4rem 1.5rem; /* Extra bottom padding for navbar */
-       height: auto;
-       min-height: auto; /* Allow content to dictate height on mobile */
-       justify-content: flex-start;
-   }
+    .panel {
+        /* Reduce padding on mobile */
+        padding: 4rem 1.5rem;
+        min-height: auto;
+        justify-content: flex-start;
+    }
+    
+    /* Make grids stack */
+    .grid.two-column{
+        grid-template-columns: 1fr;
+    }
 
-    /* Stack the grid columns */
-   .grid-2-col{
-       grid-template-columns: 1fr;
-       gap: 2rem;
-   }
+    /* Fix Navigation for mobile: Make it 4 rows of 4 instead of 1 row of 16 */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
 
-   /* Make text fill width on mobile */
-   .text-block {
-       max-width: 100%;
-   }
-   
-   /* Fix Typography sizing */
-   .h1-title {
-       font-size: 2rem;
-   }
-   
-   h2 {
-       font-size: 1.3rem;
-   }
-   
-   h3 {
-       font-size: 1.1rem;
-   }
+    .nav-item {
+      /* padding: 8px; */
+      text-align: center;
+      align-content: center;
+      position: relative;
+      height: 2rem; /* Taller touch targets */
+    }
 
-   /* NAV BAR MOBILE FIX */
-   /* We keep the grid look, but allow scrolling so buttons aren't too thin */
-   .navbar {
-       overflow-x: auto;
-       padding: 5px;
-   }
+    .nav-item a {
+      text-decoration: none;
+      color: #050505;
+      font-size: 0.5rem;
+    }
 
-   .nav-grid {
-       display: flex; /* Switch to flex to allow scrolling row */
-       min-width: 600px; /* Force it to be wide enough to look good */
-       gap: 5px;
-   }
+  /* Intro */
+  #intro .intro-layout {
+    flex-direction: column-reverse;
+    text-align: left;
+    padding: 0 1rem;
+  }
 
-   .nav-item {
-       flex: 1; /* Distribute space evenly */
-   }
+  #intro .intro-illustration {
+    flex: 0 0 auto;
+  }
 
-   /* Embed Fixes */
-   .visualisation-container {
-       max-width: 100%;
-   }
+  /* Currently Open */
+  #currently-open .currently-open-layout {
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  #currently-open .section-text-card {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
 
-   .tableauPlaceholder {
-        height: 500px !important; /* Force height on mobile */
-   }
+  #currently-open .currently-open-illustration {
+    flex: 0 0 auto;
+  }
 
-   /* Specific Layout Adjustments */
-   .intro-layout, .lifespan-layout, .gap-inline, .econ-panel, .cb-top-row, .conclusion-bottom-row {
-       flex-direction: column;
-   }
-   
-   /* Images */
-   .page-illustration, .econ-img, .cb-img, .conclusion-img {
-       width: 100%;
-       max-width: 300px;
-       margin: 0 auto;
-   }
+  /* Cuisine Breakdown */
+  .cuisine-inline,
+  .cuisine-row-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+
+  .cuisine-images-inline {
+    flex-wrap: wrap;
+  }
+
+  .cuisine-small-img {
+    width: 70px;
+  }
+
+  .cuisine-image-right img {
+    width: 200px;
+  }
+
+  /* Cafes */
+  .cafes-inline {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .cafes-icon-small,
+  .cafes-icon-large {
+    width: 70px;
+  }
+
+  /* Bad News */
+  #bad-news .panel {
+    padding: 0 2rem;
+  }
+
+  .badnews-illustration {
+    width: 240px;
+  }
+
+  /* Average Lifespan */
+  .lifespan-layout {
+    flex-direction: column-reverse;
+    padding: 0 1rem;
+  }
+
+  .lifespan-viz {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* Overlaps */
+  .overlap-inline {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  #overlaps .panel {
+    padding: 0 1.5rem;
+  }
+
+  /* What does it mean */
+  #whatdoesitmean .panel {
+    padding: 0 1.5rem;
+  }
+
+  .wdim-img {
+    width: 260px;
+  }
+
+  /* Asian Population */
+  #growing-asian-population .panel {
+    padding: 2rem 1.5rem 0;
+  }
+
+  .gap-inline {
+    flex-direction: column;
+  }
+
+  .gap-icon {
+    width: 110px;
+  }
+
+  /* Economics */
+  #economics .economics-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .econ-img-wrapper {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .econ-img {
+    width: 100%;
+  }
+
+  .econ-text {
+    max-width: 100%;
+  }
+
+  /* Economics Continued */
+  .econ2-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .econ2-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .econ2-img {
+    width: 150px;
+  }
+
+  .econ2-text-main h3,
+  .econ2-bottom-text {
+    max-width: 100%;
+  }
+
+  /* Consumer Behaviour */
+  .cb-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .cb-top-row {
+    flex-direction: column;
+  }
+
+  .cb-img {
+    width: 150px;
+  }
+
+  .cb-text-main,
+  .cb-extra-text h3 {
+    max-width: 100%;
+  }
+
+  /* Sum it Up */
+  .siu-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .siu-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .siu-img {
+    width: 140px;
+  }
+
+  .siu-top h3,
+  .siu-bottom-text h3 {
+    max-width: 100%;
+  }
+
+  /* Conclusion */
+  .conclusion-panel {
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .conclusion-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .conclusion-img {
+    width: 150px;
+  }
 }
