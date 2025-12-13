@@ -740,19 +740,19 @@ h3, ul, li {
 }
 
 .conclusion-content {
-  max-width: 1100px;
-  width: 100%;
-  flex-direction: column;
+  /* max-width: 1100px; */
+  /* width: 100%; */
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 10rem;
+  /* gap: 1rem; */
+  /* margin-top: 10rem; */
 }
 
 .conclusion-top h3 {
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 0.6rem;
-  max-width: 50rem;
+  /* max-width: 50rem; */
   text-align: left;
 }
 
